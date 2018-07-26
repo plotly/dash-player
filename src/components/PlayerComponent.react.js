@@ -10,6 +10,41 @@ import PropTypes from 'prop-types';
  * which is editable by the user.
  */
 export default class PlayerComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {value: props.value};
+
+        this.updateCurrentTime = this.updateCurrentTime.bind(this);
+        this.updateInstanceMethods = this.updateInstanceMethods.bind(this);
+        // this.getCurrentTime = this.getCurrentTime.bind(this);
+        // this.getSecondsLoaded = this.getSecondsLoaded.bind(this);
+        // this.getDuration = this.getDuration.bind(this);
+        // this.getInternalPlayer = this.getInternalPlayer.bind(this);
+        setInterval(this.updateCurrentTime, 40);  // 25 FPS
+        setInterval(this.updateInstanceMethods, 500);
+    }
+
+    updateCurrentTime(){
+        const {setProps} = this.props;
+        const currentTime = this.refs.player.getCurrentTime();
+        if (setProps  !== null) {
+            setProps({currentTime: currentTime});
+        }
+    }
+
+    updateInstanceMethods(){
+        const {setProps} = this.props;
+        const secondsLoaded = this.refs.player.getSecondsLoaded();
+        const duration = this.refs.player.getDuration();
+
+        if (setProps  !== null) {
+            setProps({
+                secondsLoaded: secondsLoaded,
+                duration: duration
+            });
+        }
+    }
+
     render() {
         const {
             url,
@@ -115,7 +150,24 @@ PlayerComponent.propTypes = {
     /**
      * Applies the playsinline attribute where supported
      */
-    playsinline: PropTypes.bool
+    playsinline: PropTypes.bool,
+
+    // Below are instance Methods that are updated at a fixed intervals, and
+    // used as a properties in dash callbacks.
+    /**
+     * Returns the number of seconds that have been played
+     */
+    currentTime: PropTypes.number,
+
+    /**
+     * Returns the number of seconds that have been loaded
+     */
+    secondsLoaded: PropTypes.number,
+
+    /**
+     * Returns the duration (in seconds) of the currently playing media
+     */
+    duration: PropTypes.number
 };
 
 PlayerComponent.defaultProps = {
