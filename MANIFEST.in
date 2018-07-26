@@ -1,0 +1,5 @@
+include dash_player/bundle.js
+include dash_player/bundle.js.map
+include dash_player/metadata.json
+include README.md
+include LICENSE.md
