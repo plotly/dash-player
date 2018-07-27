@@ -16,10 +16,6 @@ export default class PlayerComponent extends Component {
 
         this.updateCurrentTime = this.updateCurrentTime.bind(this);
         this.updateInstanceMethods = this.updateInstanceMethods.bind(this);
-        // this.getCurrentTime = this.getCurrentTime.bind(this);
-        // this.getSecondsLoaded = this.getSecondsLoaded.bind(this);
-        // this.getDuration = this.getDuration.bind(this);
-        // this.getInternalPlayer = this.getInternalPlayer.bind(this);
         setInterval(this.updateCurrentTime, 40);  // 25 FPS
         setInterval(this.updateInstanceMethods, 500);
     }
@@ -56,6 +52,7 @@ export default class PlayerComponent extends Component {
             playbackRate,
             width,
             height,
+            style,
             progressInterval,
             playsinline
         } = this.props;
@@ -72,6 +69,7 @@ export default class PlayerComponent extends Component {
                 playbackRate={playbackRate}
                 width={width}
                 height={height}
+                style={style}
                 progressInterval={progressInterval}
                 playsline={playsinline}
             />
@@ -143,6 +141,11 @@ PlayerComponent.propTypes = {
     height: PropTypes.string,
 
     /**
+     * Add inline styles to the root element
+     */
+    style: PropTypes.object,
+
+    /**
      * The time between onProgress callbacks, in milliseconds
      */
     progressInterval: PropTypes.string,
@@ -179,6 +182,7 @@ PlayerComponent.defaultProps = {
     playbackRate: 1,
     width: '640px',
     height: '360px',
+    style:{},
     progressInterval: 1000,
     playsinline: false
 };
