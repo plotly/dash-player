@@ -13,7 +13,11 @@ app.scripts.config.serve_locally = True
 
 app.layout = html.Div([
     html.Div(
-        style={'width': '40%', 'float': 'left', 'margin': '0% 5% 0% 5%'},
+        style={
+            'width': '40%',
+            'float': 'left',
+            'margin': '0% 5% 1% 5%'
+        },
         children=[
             dash_player.PlayerComponent(
                 id='video-player',
@@ -21,71 +25,86 @@ app.layout = html.Div([
                 controls=True,
                 width='100%'
             ),
-            html.Div(id='div-current-time', style={'margin-bottom': '20px'}),
+            html.Div(
+                id='div-current-time',
+                style={'margin': '10px 0px'}
+            ),
 
-            html.Div(id='div-method-output', style={'margin-bottom': '20px'}),
+            html.Div(
+                id='div-method-output',
+                style={'margin': '10px 0px'}
+            ),
+
             dcc.Markdown(dedent('''
             ### Video Examples
-            * mp4: http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
-            * mp3: https://storage.googleapis.com/media-session/elephants-dream/the-wires.mp3
-            * webm: http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm
-            * ogv: http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv
+            * mp4: http://media.w3.org/2010/05/bunny/movie.mp4
+            * mp3: https://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3
+            * webm: https://media.w3.org/2010/05/sintel/trailer.webm
+            * ogv: http://media.w3.org/2010/05/bunny/movie.ogv
             * Youtube: https://www.youtube.com/watch?v=sea2K4AuPOk
             '''))
-        ]),
+        ]
+    ),
 
-    html.Div(style={'width': '40%', 'float': 'left'}, children=[
-        dcc.Input(
-            id='input-url',
-            value='http://media.w3.org/2010/05/bunny/movie.mp4'
-        ),
+    html.Div(
+        style={
+            'width': '30%',
+            'float': 'left'
+        },
+        children=[
+            dcc.Input(
+                id='input-url',
+                value='http://media.w3.org/2010/05/bunny/movie.mp4'
+            ),
 
-        html.Button('Change URL', id='button-update-url'),
+            html.Button('Change URL', id='button-update-url'),
 
-        dcc.Checklist(
-            id='radio-bool-props',
-            options=[{'label': val.capitalize(), 'value': val} for val in [
-                'playing',
-                'loop',
-                'controls',
-                'muted'
-            ]],
-            values=['controls']
-        ),
+            dcc.Checklist(
+                id='radio-bool-props',
+                options=[{'label': val.capitalize(), 'value': val} for val in [
+                    'playing',
+                    'loop',
+                    'controls',
+                    'muted'
+                ]],
+                values=['controls']
+            ),
 
-        html.P("Volume:", style={'margin-top': '10px'}),
-        dcc.Slider(
-            id='slider-volume',
-            min=0,
-            max=1,
-            step=0.1,
-            value=None,
-            updatemode='drag',
-            marks={0: '0%', 1: '100%'}
-        ),
+            html.P("Volume:", style={'margin-top': '10px'}),
+            dcc.Slider(
+                id='slider-volume',
+                min=0,
+                max=1,
+                step=0.1,
+                value=None,
+                updatemode='drag',
+                marks={0: '0%', 1: '100%'}
+            ),
 
-        html.P("Playback Rate:", style={'margin-top': '25px'}),
-        dcc.Slider(
-            id='slider-playback-rate',
-            min=0,
-            max=4,
-            step=None,
-            updatemode='drag',
-            marks={i: str(i) + 'x' for i in [0, 0.25, 0.5, 0.75, 1, 2, 3, 4]},
-            value=1
-        ),
+            html.P("Playback Rate:", style={'margin-top': '25px'}),
+            dcc.Slider(
+                id='slider-playback-rate',
+                min=0,
+                max=4,
+                step=None,
+                updatemode='drag',
+                marks={i: str(i) + 'x' for i in
+                       [0, 0.25, 0.5, 0.75, 1, 2, 3, 4]},
+                value=1
+            ),
 
-        html.P("Seek To:", style={'margin-top': '30px'}),
-        dcc.Slider(
-            id='slider-seek-to',
-            min=0,
-            max=1,
-            step=None,
-            updatemode='drag',
-            marks={i: str(i*100) + '%' for i in [0, 0.25, 0.5, 0.75, 1]},
-            value=0
-        ),
-    ]),
+            html.P("Seek To:", style={'margin-top': '30px'}),
+            dcc.Slider(
+                id='slider-seek-to',
+                min=0,
+                max=1,
+                step=None,
+                updatemode='drag',
+                marks={i: str(i * 100) + '%' for i in [0, 0.25, 0.5, 0.75, 1]},
+                value=0
+            ),
+        ]
+    ),
 ])
 
 
@@ -150,6 +169,7 @@ def update_methods(secondsLoaded, duration):
               [Input('slider-seek-to', 'value')])
 def set_seekTo(value):
     return value
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)
