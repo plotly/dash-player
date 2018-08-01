@@ -22,10 +22,11 @@ app.layout = html.Div([
             'playing',
             'loop',
             'controls',
-            'muted'
+            'muted',
+            'seekTo'
         ]],
         values=['controls']
-    )
+    ),
 ])
 
 
@@ -51,6 +52,13 @@ def update_prop_controls(values):
               [Input('radio-bool-props', 'values')])
 def update_prop_muted(values):
     return 'muted' in values
+
+
+@app.callback(Output('video-player', 'seekTo'),
+              [Input('radio-bool-props', 'values')])
+def update_prop_seekTo(values):
+    if 'seekTo' in values:
+        return 5
 
 
 if __name__ == '__main__':

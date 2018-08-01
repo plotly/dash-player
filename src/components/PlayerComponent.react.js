@@ -3,11 +3,9 @@ import ReactPlayer from 'react-player';
 import PropTypes from 'prop-types';
 
 /**
- * ExampleComponent is an example component.
- * It takes a property, `label`, and
- * displays it.
- * It renders an input with the property `value`
- * which is editable by the user.
+ * A Dash component for playing a variety of URLs, including file paths,
+ * YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud,
+ * and DailyMotion.
  */
 export default class PlayerComponent extends Component {
     constructor(props) {
@@ -16,6 +14,7 @@ export default class PlayerComponent extends Component {
 
         this.updateCurrentTime = this.updateCurrentTime.bind(this);
         this.updateInstanceMethods = this.updateInstanceMethods.bind(this);
+        this.setSeekTo = this.setSeekTo.bind(this);
         setInterval(this.updateCurrentTime, 40);  // 25 FPS
         setInterval(this.updateInstanceMethods, 500);
     }
@@ -39,6 +38,27 @@ export default class PlayerComponent extends Component {
                 duration: duration
             });
         }
+    }
+
+    /**
+     * Applies the seekTo() method to the player if the seekTo prop
+     * contains any value, then set seekTo to null. If seekTo was already
+     * null, it doesn't do anything.
+     */
+    setSeekTo(){
+        const {
+            seekTo,
+            setProps
+        } = this.props;
+
+        if (seekTo !== null && setProps !== null){
+            this.refs.player.seekTo(seekTo);
+            setProps({seekTo: null});
+        }
+    }
+
+    componentDidUpdate(){
+        this.setSeekTo();
     }
 
     render() {
@@ -170,7 +190,12 @@ PlayerComponent.propTypes = {
     /**
      * Returns the duration (in seconds) of the currently playing media
      */
-    duration: PropTypes.number
+    duration: PropTypes.number,
+
+    /**
+     * Seek to the given number of seconds, or fraction if amount is between 0 and 1
+     */
+    seekTo: PropTypes.number
 };
 
 PlayerComponent.defaultProps = {
@@ -184,5 +209,6 @@ PlayerComponent.defaultProps = {
     height: '360px',
     style:{},
     progressInterval: 1000,
-    playsinline: false
+    playsinline: false,
+    seekTo: null
 };

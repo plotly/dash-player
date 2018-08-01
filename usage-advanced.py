@@ -13,7 +13,7 @@ app.scripts.config.serve_locally = True
 
 app.layout = html.Div([
     html.Div(
-        style={'width': '40%', 'float': 'left', 'margin-right': '5%'},
+        style={'width': '40%', 'float': 'left', 'margin': '0% 5% 0% 5%'},
         children=[
             dash_player.PlayerComponent(
                 id='video-player',
@@ -73,7 +73,18 @@ app.layout = html.Div([
             updatemode='drag',
             marks={i: str(i) + 'x' for i in [0, 0.25, 0.5, 0.75, 1, 2, 3, 4]},
             value=1
-        )
+        ),
+
+        html.P("Seek To:", style={'margin-top': '30px'}),
+        dcc.Slider(
+            id='slider-seek-to',
+            min=0,
+            max=1,
+            step=None,
+            updatemode='drag',
+            marks={i: str(i*100) + '%' for i in [0, 0.25, 0.5, 0.75, 1]},
+            value=0
+        ),
     ]),
 ])
 
@@ -134,6 +145,11 @@ def update_time(currentTime):
 def update_methods(secondsLoaded, duration):
     return 'Second Loaded: {}, Duration: {}'.format(secondsLoaded, duration)
 
+
+@app.callback(Output('video-player', 'seekTo'),
+              [Input('slider-seek-to', 'value')])
+def set_seekTo(value):
+    return value
 
 if __name__ == '__main__':
     app.run_server(debug=True)
