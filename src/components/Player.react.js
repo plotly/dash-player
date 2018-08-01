@@ -16,9 +16,6 @@ export default class Player extends Component {
         this.updateDuration = this.updateDuration.bind(this);
         this.updateIntervals = this.updateIntervals.bind(this);
         this.setSeekTo = this.setSeekTo.bind(this);
-        this.handleCurrentTime = setInterval(this.updateCurrentTime, 40);  // 25 FPS
-        this.handleSecondsLoaded = setInterval(this.updateSecondsLoaded, 500);
-        this.handleDuration = setInterval(this.updateDuration, 500);
     }
 
     updateCurrentTime(){
@@ -60,21 +57,24 @@ export default class Player extends Component {
         } = this.props;
 
         // Update interval of current time
-        if (prevProps.intervalCurrentTime !== intervalCurrentTime){
+        if (this.handleCurrentTime === undefined ||
+            prevProps.intervalCurrentTime !== intervalCurrentTime){
             clearInterval(this.handleCurrentTime);
             this.handleCurrentTime = setInterval(
                 this.updateCurrentTime,
                 intervalCurrentTime
             );
         }
-        if (prevProps.intervalDuration !== intervalDuration){
+        if (this.handleDuration === undefined ||
+            prevProps.intervalDuration !== intervalDuration){
             clearInterval(this.handleDuration);
             this.handleDuration = setInterval(
                 this.updateDuration,
                 intervalDuration
             );
         }
-        if (prevProps.intervalSecondsLoaded !== intervalSecondsLoaded){
+        if (this.handleSecondsLoaded === undefined ||
+            prevProps.intervalSecondsLoaded !== intervalSecondsLoaded){
             clearInterval(this.handleSecondsLoaded);
             this.handleSecondsLoaded = setInterval(
                 this.updateSecondsLoaded,
@@ -263,7 +263,7 @@ Player.defaultProps = {
     style:{},
     playsinline: false,
     seekTo: null,
-    intervalCurrentTime: 40,
+    intervalCurrentTime: 40,  // 25 FPS
     intervalSecondsLoaded: 500,
     intervalDuration: 500
 };
