@@ -19,7 +19,7 @@ app.layout = html.Div([
             'margin': '0% 5% 1% 5%'
         },
         children=[
-            dash_player.PlayerComponent(
+            dash_player.Player(
                 id='video-player',
                 url='http://media.w3.org/2010/05/bunny/movie.mp4',
                 controls=True,

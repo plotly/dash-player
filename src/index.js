@@ -1,8 +1,6 @@
 /* eslint-disable import/prefer-default-export */
-import ExampleComponent from './components/ExampleComponent.react';
-import PlayerComponent from './components/PlayerComponent.react';
+import Player from './components/Player.react';
 
 export {
-    ExampleComponent,
-    PlayerComponent
+    Player
 };

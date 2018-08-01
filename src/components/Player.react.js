@@ -7,10 +7,9 @@ import PropTypes from 'prop-types';
  * YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud,
  * and DailyMotion.
  */
-export default class PlayerComponent extends Component {
+export default class Player extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: props.value};
 
         this.updateCurrentTime = this.updateCurrentTime.bind(this);
         this.updateInstanceMethods = this.updateInstanceMethods.bind(this);
@@ -98,7 +97,7 @@ export default class PlayerComponent extends Component {
     }
 }
 
-PlayerComponent.propTypes = {
+Player.propTypes = {
     /**
      * The ID used to identify this compnent in Dash callbacks
      */
@@ -171,7 +170,9 @@ PlayerComponent.propTypes = {
     progressInterval: PropTypes.string,
 
     /**
-     * Applies the playsinline attribute where supported
+     * Applies the html5 playsinline attribute where supported, which allows
+     * videos to be played inline and will not automatically enter fullscreen
+     * mode when playback begins (for iOS).
      */
     playsinline: PropTypes.bool,
 
@@ -198,7 +199,7 @@ PlayerComponent.propTypes = {
     seekTo: PropTypes.number
 };
 
-PlayerComponent.defaultProps = {
+Player.defaultProps = {
     playing: false,
     loop: false,
     controls: false,

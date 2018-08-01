@@ -10,7 +10,7 @@ app.scripts.config.serve_locally = True
 
 
 app.layout = html.Div([
-    dash_player.PlayerComponent(
+    dash_player.Player(
         id='video-player',
         url='http://media.w3.org/2010/05/bunny/movie.mp4',
         controls=True
