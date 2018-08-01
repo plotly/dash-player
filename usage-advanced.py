@@ -93,6 +93,40 @@ app.layout = html.Div([
                 value=1
             ),
 
+            html.P("Update Interval for Current Time:", style={'margin-top': '30px'}),
+            dcc.Slider(
+                id='slider-intervalCurrentTime',
+                min=40,
+                max=1000,
+                step=None,
+                updatemode='drag',
+                marks={i: str(i) for i in [40, 100, 200, 500, 1000]},
+                value=100
+            ),
+
+            html.P("Update Interval for seconds loaded:", style={'margin-top': '30px'}),
+            dcc.Slider(
+                id='slider-intervalSecondsLoaded',
+                min=200,
+                max=2000,
+                step=None,
+                updatemode='drag',
+                marks={i: str(i) for i in [200, 500, 750, 1000, 2000]},
+                value=500
+            ),
+
+            html.P("Update Interval for duration:",
+                   style={'margin-top': '30px'}),
+            dcc.Slider(
+                id='slider-intervalDuration',
+                min=200,
+                max=2000,
+                step=None,
+                updatemode='drag',
+                marks={i: str(i) for i in [200, 500, 750, 1000, 2000]},
+                value=500
+            ),
+
             html.P("Seek To:", style={'margin-top': '30px'}),
             dcc.Slider(
                 id='slider-seek-to',
@@ -163,6 +197,24 @@ def update_time(currentTime):
               [State('video-player', 'duration')])
 def update_methods(secondsLoaded, duration):
     return 'Second Loaded: {}, Duration: {}'.format(secondsLoaded, duration)
+
+
+@app.callback(Output('video-player', 'intervalCurrentTime'),
+              [Input('slider-intervalCurrentTime', 'value')])
+def update_intervalCurrentTime(value):
+    return value
+
+
+@app.callback(Output('video-player', 'intervalSecondsLoaded'),
+              [Input('slider-intervalSecondsLoaded', 'value')])
+def update_intervalSecondsLoaded(value):
+    return value
+
+
+@app.callback(Output('video-player', 'intervalDuration'),
+              [Input('slider-intervalDuration', 'value')])
+def update_intervalDuration(value):
+    return value
 
 
 @app.callback(Output('video-player', 'seekTo'),

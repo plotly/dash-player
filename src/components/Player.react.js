@@ -12,10 +12,13 @@ export default class Player extends Component {
         super(props);
 
         this.updateCurrentTime = this.updateCurrentTime.bind(this);
-        this.updateInstanceMethods = this.updateInstanceMethods.bind(this);
+        this.updateSecondsLoaded = this.updateSecondsLoaded.bind(this);
+        this.updateDuration = this.updateDuration.bind(this);
+        this.updateIntervals = this.updateIntervals.bind(this);
         this.setSeekTo = this.setSeekTo.bind(this);
-        setInterval(this.updateCurrentTime, 40);  // 25 FPS
-        setInterval(this.updateInstanceMethods, 500);
+        this.handleCurrentTime = setInterval(this.updateCurrentTime, 40);  // 25 FPS
+        this.handleSecondsLoaded = setInterval(this.updateSecondsLoaded, 500);
+        this.handleDuration = setInterval(this.updateDuration, 500);
     }
 
     updateCurrentTime(){
@@ -26,16 +29,57 @@ export default class Player extends Component {
         }
     }
 
-    updateInstanceMethods(){
+    updateSecondsLoaded(){
         const {setProps} = this.props;
         const secondsLoaded = this.refs.player.getSecondsLoaded();
-        const duration = this.refs.player.getDuration();
 
         if (setProps  !== null) {
-            setProps({
-                secondsLoaded: secondsLoaded,
-                duration: duration
-            });
+            setProps({secondsLoaded: secondsLoaded});
+        }
+    }
+
+    updateDuration(){
+        const {setProps} = this.props;
+        const duration = this.refs.player.getDuration();
+
+        if (setProps !== null){
+            setProps({duration: duration});
+        }
+    }
+
+    /**
+     * When one of the interval props are changed, this clears the currently
+     * assigned handle and set it to the new interval value. It works for
+     * currentTime, duration and secondsLoaded.
+     */
+    updateIntervals(prevProps){
+        const {
+            intervalCurrentTime,
+            intervalDuration,
+            intervalSecondsLoaded
+        } = this.props;
+
+        // Update interval of current time
+        if (prevProps.intervalCurrentTime !== intervalCurrentTime){
+            clearInterval(this.handleCurrentTime);
+            this.handleCurrentTime = setInterval(
+                this.updateCurrentTime,
+                intervalCurrentTime
+            );
+        }
+        if (prevProps.intervalDuration !== intervalDuration){
+            clearInterval(this.handleDuration);
+            this.handleDuration = setInterval(
+                this.updateDuration,
+                intervalDuration
+            );
+        }
+        if (prevProps.intervalSecondsLoaded !== intervalSecondsLoaded){
+            clearInterval(this.handleSecondsLoaded);
+            this.handleSecondsLoaded = setInterval(
+                this.updateSecondsLoaded,
+                intervalSecondsLoaded
+            );
         }
     }
 
@@ -56,7 +100,8 @@ export default class Player extends Component {
         }
     }
 
-    componentDidUpdate(){
+    componentDidUpdate(prevProps){
+        this.updateIntervals(prevProps);
         this.setSeekTo();
     }
 
@@ -72,7 +117,6 @@ export default class Player extends Component {
             width,
             height,
             style,
-            progressInterval,
             playsinline
         } = this.props;
 
@@ -89,10 +133,8 @@ export default class Player extends Component {
                 width={width}
                 height={height}
                 style={style}
-                progressInterval={progressInterval}
                 playsline={playsinline}
             />
-
         );
     }
 }
@@ -165,11 +207,6 @@ Player.propTypes = {
     style: PropTypes.object,
 
     /**
-     * The time between onProgress callbacks, in milliseconds
-     */
-    progressInterval: PropTypes.string,
-
-    /**
      * Applies the html5 playsinline attribute where supported, which allows
      * videos to be played inline and will not automatically enter fullscreen
      * mode when playback begins (for iOS).
@@ -194,6 +231,21 @@ Player.propTypes = {
     duration: PropTypes.number,
 
     /**
+     * Interval in milliseconds at which currenTtime prop is updated.
+     */
+    intervalCurrentTime: PropTypes.number,
+
+    /**
+     * Interval in milliseconds at which secondsLoaded prop is updated.
+     */
+    intervalSecondsLoaded: PropTypes.number,
+
+    /**
+     * Interval in milliseconds at which duration prop is updated.
+     */
+    intervalDuration: PropTypes.number,
+
+    /**
      * Seek to the given number of seconds, or fraction if amount is between 0 and 1
      */
     seekTo: PropTypes.number
@@ -209,7 +261,9 @@ Player.defaultProps = {
     width: '640px',
     height: '360px',
     style:{},
-    progressInterval: 1000,
     playsinline: false,
-    seekTo: null
+    seekTo: null,
+    intervalCurrentTime: 40,
+    intervalSecondsLoaded: 500,
+    intervalDuration: 500
 };
