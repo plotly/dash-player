@@ -1,0 +1,17 @@
+build/
+coverage/
+dist/
+lib/
+lib/bundle.js*
+node_modules/
+dash_player/metadata.json
+dash_player/bundle.js*
+.npm
+vv/
+venv/
+*.pyc
+*.egg-info
+*.log
+.DS_Store
+.idea
+*.ipynb_checkpoints
