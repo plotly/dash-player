@@ -48,7 +48,6 @@ Prop | Description | Default
 `controls` | Set to `true` or `false` to display native player controls<br />&nbsp; ◦ &nbsp;Vimeo, Twitch and Wistia player will always display controls | `false`
 `volume` | Set the volume of the player, between `0` and `1`<br/>&nbsp; ◦ &nbsp;`null` uses default volume on all players [`#357`](https://github.com/CookPete/react-player/issues/357) | `null`
 `muted` | Mutes the player<br/>&nbsp; ◦ &nbsp;Only works if `volume` is set | `false`
-`playbackRate` | Set the playback rate of the player<br />&nbsp; ◦ &nbsp;Only supported by YouTube, Wistia, and file paths | `1`
 `width` | Set the width of the player | `640px`
 `height` | Set the height of the player | `360px`
 `style` | Add [inline styles](https://facebook.github.io/react/tips/inline-styles.html) to the root element | `{}`
