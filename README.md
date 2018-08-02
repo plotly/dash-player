@@ -28,13 +28,38 @@ $ python usage-advanced.py
 
 Once that done, you can copy the `dash_player` package in the folder of your app, and import it within your app.
 
-### Usage
+## Usage
 
 `usage.py` provides you with the basic functionality of the app. Use it to learn how to use the component.
 
 `usage-methods.py` lets you test the props that are updated at an interval, which are originally react instance methods.
 
 `usage-advanced.py` gives an overview of the full functionality of the component, and serves as an extensive testing tool.
+
+## Documentation
+
+
+Prop | Description | Default
+---- | ----------- | -------
+`id` | The ID used to identify this compnent in Dash callbacks |
+`url` | The url of a video or song to play<br/>&nbsp; ◦ &nbsp;Can be an [array](#multiple-sources-and-tracks) or [`MediaStream`](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) object
+`playing` | Set to `true` or `false` to pause or play the media | `false`
+`loop` | Set to `true` or `false` to loop the media | `false`
+`controls` | Set to `true` or `false` to display native player controls<br />&nbsp; ◦ &nbsp;Vimeo, Twitch and Wistia player will always display controls | `false`
+`volume` | Set the volume of the player, between `0` and `1`<br/>&nbsp; ◦ &nbsp;`null` uses default volume on all players [`#357`](https://github.com/CookPete/react-player/issues/357) | `null`
+`muted` | Mutes the player<br/>&nbsp; ◦ &nbsp;Only works if `volume` is set | `false`
+`playbackRate` | Set the playback rate of the player<br />&nbsp; ◦ &nbsp;Only supported by YouTube, Wistia, and file paths | `1`
+`width` | Set the width of the player | `640px`
+`height` | Set the height of the player | `360px`
+`style` | Add [inline styles](https://facebook.github.io/react/tips/inline-styles.html) to the root element | `{}`
+`playsinline` | Applies the `playsinline` attribute where supported | `false`
+`currentTime` | Returns the number of seconds that have been played
+`secondsLoaded` | Returns the number of seconds that have been loaded
+`duration` | Returns the duration (in seconds) of the currently playing media
+`intervalCurrentTime`| Interval in milliseconds at which currenTtime prop is updated. | `40`
+`intervalSecondsLoaded` | Interval in milliseconds at which secondsLoaded prop is updated. | `500`
+`intervalDuration` | Interval in milliseconds at which duration prop is updated. | `500`
+`seekTo` | Seek to the given number of seconds, or fraction if amount is between 0 and 1 | `null`
 
 
 ## Built With
