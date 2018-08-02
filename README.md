@@ -1,164 +1,61 @@
-# dash-player
+# Dash Player: Control and play videos using Dash
 
-A Dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![GitHub stars](https://img.shields.io/github/stars/xhlulu/dash-player.svg)](https://github.com/xhlulu/dash-player/stargazers)
 
-## Dash
+Dash Player is a dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. It is wrapped around the react-player component.
 
-Go to this link to learn about [Dash][].
+You can find a [demo of the component here](http://dash-player-usage.herokuapp.com).
+
+For updates and more, please see the dash community discussion on Dash Player.
+
+This is a custom community component, so if your organization or company is interested in sponsoring enhancements to this project, [please reach out to the Plotly Dash team](https://plot.ly/dash/pricing).
+
+Example from `usage-advanced.py`
+
+![Gif demoing Dash Player](images/usage-advanced.gif)
+
 
 ## Getting started
 
+Here are the following steps to get started with your own apps
 ```sh
-# Install dependencies
+$ git clone https://github.com/xhlulu/dash-player.git
+$ cd dash-player
 $ npm install
-
-# Watch source for changes and build to `lib/`
-$ npm start
+$ python usage-advanced.py
 ```
 
-## Development
+Once that done, you can copy the `dash_player` package in the folder of your app, and import it within your app.
 
-### Demo server
+### Usage
 
-You can start up a demo development server to see a demo of the rendered
-components:
+`usage.py` provides you with the basic functionality of the app. Use it to learn how to use the component.
 
-```sh
-$ builder run demo
-$ open http://localhost:9000
-```
+`usage-methods.py` lets you test the props that are updated at an interval, which are originally react instance methods.
 
-You have to maintain the list of components in `demo/Demo.react.js`.
-
-### Code quality and tests
-
-#### To run lint and unit tests:
-
-```sh
-$ npm test
-```
-
-#### To run unit tests and watch for changes:
-
-```sh
-$ npm run test-watch
-```
-
-#### To debug unit tests in a browser (Chrome):
-
-```sh
-$ npm run test-debug
-```
-
-1. Wait until Chrome launches.
-2. Click the "DEBUG" button in the top right corner.
-3. Open up Chrome Devtools (`Cmd+opt+i`).
-4. Click the "Sources" tab.
-5. Find source files
-  - Navigate to `webpack:// -> . -> spec/components` to find your test source files.
-  - Navigate to `webpack:// -> [your/repo/path]] -> dash-player -> src` to find your component source files.
-6. Now you can set breakpoints and reload the page to hit them.
-7. The test output is available in the "Console" tab, or in any tab by pressing "Esc".
-
-#### To run a specific test
-
-In your test, append `.only` to a `describe` or `it` statement:
-
-```javascript
-describe.only('Foo component', () => {
-    // ...
-})l
-```
-
-### Testing your components in Dash
-
-1. Build development bundle to `lib/` and watch for changes
-
-        # Once this is started, you can just leave it running.
-        $ npm start
-
-2. Install module locally (after every change)
-
-        # Generate metadata, and build the JavaScript bundle
-        $ npm run install-local
-
-        # Now you're done. For subsequent changes, if you've got `npm start`
-        # running in a separate process, it's enough to just do:
-        $ python setup.py install
-
-3. Run the dash layout you want to test
-
-        # Import dash-player to your layout, then run it:
-        $ python my_dash_layout.py
+`usage-advanced.py` gives an overview of the full functionality of the component, and serves as an extensive testing tool.
 
 
-**TODO:** There is a workflow that links your module into `site-packages` which would
-make it unnecessary to re-run `2.` on every change: `python setup.py develop`.
-Unfortunately, this doesn't seem to work with resources defined in
-`package_data`.
+## Built With
 
-See https://github.com/plotly/dash-components-archetype/issues/20
+* [Dash](https://dash.plot.ly/) - Main server and interactive components
+* [react-player](https://www.npmjs.com/package/react-player) - The react component that was wrapped by this
 
+## Contributing
 
-## Installing python package locally
-
-Before publishing to PyPi, you can test installing the module locally:
-
-```sh
-# Install in `site-packages` on your machine
-$ npm run install-local
-```
-
-## Uninstalling python package locally
-
-```sh
-$ npm run uninstall-local
-```
-
-## Publishing
-
-For now, multiple steps are necessary for publishing to NPM and PyPi,
-respectively. **TODO:**
-[#5](https://github.com/plotly/dash-components-archetype/issues/5) will roll up
-publishing steps into one workflow.
-
-Ask @chriddyp to get NPM / PyPi package publishing accesss.
-
-1. Preparing to publish to NPM
-
-        # Bump the package version
-        $ npm version major|minor|patch
-
-        # Push branch and tags to repo
-        $ git push --follow-tags
-
-2. Preparing to publish to PyPi
-
-        # Bump the PyPi package to the same version
-        $ vi setup.py
-
-        # Commit to github
-        $ git add setup.py
-        $ git commit -m "Bump pypi package version to vx.x.x"
-
-3. Publish to npm and PyPi
-
-        $ npm run publish-all
-
-## Builder / Archetype
-
-We use [Builder][] to centrally manage build configuration, dependencies, and
-scripts.
-
-To see all `builder` scripts available:
-
-```sh
-$ builder help
-```
-
-See the [dash-components-archetype][] repo for more information.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 
-[Builder]: https://github.com/FormidableLabs/builder
-[Dash]: https://github.com/plotly/dash2
-[dash-components-archetype]: https://github.com/plotly/dash-components-archetype
+## Authors
+
+* **Xing Han** - *Initial Work* - [@xhlulu](https://github.com/xhlulu)
+* **Chris** - *Code Review*
+
+See also the list of [contributors](https://github.com/xhlulu/dash-player/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
