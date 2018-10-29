@@ -23,6 +23,7 @@ Here are the following steps to get started with your own apps
 $ git clone https://github.com/xhlulu/dash-player.git
 $ cd dash-player
 $ npm install
+$ npm prepublish
 $ python usage-advanced.py
 ```
 
