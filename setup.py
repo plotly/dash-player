@@ -1,14 +1,20 @@
+import json
+import os
 from setuptools import setup
 
-exec (open('dash_player/version.py').read())
+
+with open(os.path.join('dash_player', 'package.json')) as f:
+    package = json.load(f)
+
+package_name = package["name"].replace(" ", "_").replace("-", "_")
 
 setup(
-    name='dash_player',
-    version=__version__,
-    author='plotly',
-    packages=['dash_player'],
+    name=package_name,
+    version=package["version"],
+    author=package['author'],
+    packages=[package_name],
     include_package_data=True,
-    license='MIT',
-    description='A Dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion.',
+    license=package['license'],
+    description=package['description'] if 'description' in package else package_name,
     install_requires=[]
 )

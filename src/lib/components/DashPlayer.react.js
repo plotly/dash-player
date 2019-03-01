@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  * YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud,
  * and DailyMotion.
  */
-export default class Player extends Component {
+export default class DashPlayer extends Component {
     constructor(props) {
         super(props);
 
@@ -20,27 +20,34 @@ export default class Player extends Component {
 
     updateCurrentTime(){
         const {setProps} = this.props;
-        const currentTime = this.refs.player.getCurrentTime();
-        if (setProps  !== null) {
-            setProps({currentTime: currentTime});
+        if (this.refs.player !== null){
+            const currentTime = this.refs.player.getCurrentTime();
+
+            if (typeof setProps  === 'function') {
+                setProps({currentTime: currentTime});
+            }
         }
     }
 
     updateSecondsLoaded(){
         const {setProps} = this.props;
-        const secondsLoaded = this.refs.player.getSecondsLoaded();
+        if (this.refs.player !== null){
+            const secondsLoaded = this.refs.player.getSecondsLoaded();
 
-        if (setProps  !== null) {
-            setProps({secondsLoaded: secondsLoaded});
+            if (typeof setProps  === 'function') {
+                setProps({secondsLoaded: secondsLoaded});
+            }
         }
     }
 
     updateDuration(){
         const {setProps} = this.props;
-        const duration = this.refs.player.getDuration();
+        if (this.refs.player !== null){
+            const duration = this.refs.player.getDuration();
 
-        if (setProps !== null){
-            setProps({duration: duration});
+            if (typeof setProps  === 'function'){
+                setProps({duration: duration});
+            }
         }
     }
 
@@ -57,7 +64,7 @@ export default class Player extends Component {
         } = this.props;
 
         // Update interval of current time
-        if (this.handleCurrentTime === undefined ||
+        if (typeof this.handleCurrentTime === 'undefined' ||
             prevProps.intervalCurrentTime !== intervalCurrentTime){
             clearInterval(this.handleCurrentTime);
             this.handleCurrentTime = setInterval(
@@ -65,7 +72,7 @@ export default class Player extends Component {
                 intervalCurrentTime
             );
         }
-        if (this.handleDuration === undefined ||
+        if (typeof this.handleDuration === 'undefined' ||
             prevProps.intervalDuration !== intervalDuration){
             clearInterval(this.handleDuration);
             this.handleDuration = setInterval(
@@ -73,7 +80,7 @@ export default class Player extends Component {
                 intervalDuration
             );
         }
-        if (this.handleSecondsLoaded === undefined ||
+        if (typeof this.handleSecondsLoaded === 'undefined' ||
             prevProps.intervalSecondsLoaded !== intervalSecondsLoaded){
             clearInterval(this.handleSecondsLoaded);
             this.handleSecondsLoaded = setInterval(
@@ -94,7 +101,7 @@ export default class Player extends Component {
             setProps
         } = this.props;
 
-        if (seekTo !== null && setProps !== null){
+        if (seekTo !== null && typeof setProps  === 'function'){
             this.refs.player.seekTo(seekTo);
             setProps({seekTo: null});
         }
@@ -139,7 +146,7 @@ export default class Player extends Component {
     }
 }
 
-Player.propTypes = {
+DashPlayer.propTypes = {
     /**
      * The ID used to identify this compnent in Dash callbacks
      */
@@ -251,7 +258,7 @@ Player.propTypes = {
     seekTo: PropTypes.number
 };
 
-Player.defaultProps = {
+DashPlayer.defaultProps = {
     playing: false,
     loop: false,
     controls: false,
@@ -263,7 +270,7 @@ Player.defaultProps = {
     style:{},
     playsinline: false,
     seekTo: null,
-    intervalCurrentTime: 40,  // 25 FPS
+    intervalCurrentTime: 100,
     intervalSecondsLoaded: 500,
     intervalDuration: 500
 };

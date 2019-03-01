@@ -1,6 +1,4 @@
-# [DEPRECATED] Dash Player: Control and play videos using Dash
-
-*This repository is deprecated, since it is now officially supported and maintained by Plotly. Head over to the [new official repository](https://github.com/plotly/dash-player) for the updated version, as well as instructions to download it on PyPI.*
+Dash Player: Control and play videos using Dash
 
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![GitHub stars](https://img.shields.io/github/stars/xhlulu/dash-player.svg)](https://github.com/xhlulu/dash-player/stargazers)
