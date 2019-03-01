@@ -1,7 +1,6 @@
 build/
 coverage/
 dist/
-lib/
 lib/bundle.js*
 node_modules/
 dash_player/metadata.json
