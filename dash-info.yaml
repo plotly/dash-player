@@ -1,0 +1,4 @@
+pkg_help_description: >
+    Dash Player is a dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. It is wrapped around the react-player component.
+pkg_help_title: >
+    Interactive Media Player Component for Dash
