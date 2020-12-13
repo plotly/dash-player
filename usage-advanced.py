@@ -67,7 +67,7 @@ app.layout = html.Div([
                     'controls',
                     'muted'
                 ]],
-                values=['controls']
+                value=['controls']
             ),
 
             html.P("Volume:", style={'margin-top': '10px'}),
