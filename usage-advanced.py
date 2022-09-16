@@ -49,7 +49,7 @@ app.layout = html.Div(
                         {"label": val.capitalize(), "value": val}
                         for val in ["playing", "loop", "controls", "muted"]
                     ],
-                    values=["controls"],
+                    value=["controls"],
                 ),
                 html.P("Volume:", style={"margin-top": "10px"}),
                 dcc.Slider(
@@ -121,22 +121,22 @@ app.layout = html.Div(
 )
 
 
-@app.callback(Output("video-player", "playing"), [Input("radio-bool-props", "values")])
+@app.callback(Output("video-player", "playing"), [Input("radio-bool-props", "value")])
 def update_prop_playing(values):
     return "playing" in values
 
 
-@app.callback(Output("video-player", "loop"), [Input("radio-bool-props", "values")])
+@app.callback(Output("video-player", "loop"), [Input("radio-bool-props", "value")])
 def update_prop_loop(values):
     return "loop" in values
 
 
-@app.callback(Output("video-player", "controls"), [Input("radio-bool-props", "values")])
+@app.callback(Output("video-player", "controls"), [Input("radio-bool-props", "value")])
 def update_prop_controls(values):
     return "controls" in values
 
 
-@app.callback(Output("video-player", "muted"), [Input("radio-bool-props", "values")])
+@app.callback(Output("video-player", "muted"), [Input("radio-bool-props", "value")])
 def update_prop_muted(values):
     return "muted" in values
 
