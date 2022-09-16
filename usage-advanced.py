@@ -1,10 +1,9 @@
 from textwrap import dedent
 
+from dash import Dash, dcc, html, Input, Output, State
 import dash_player
-import dash
-from dash import dcc, html, Input, Output, State
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 server = app.server
 
 app.scripts.config.serve_locally = True

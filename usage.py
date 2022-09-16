@@ -1,8 +1,7 @@
+from dash import Dash, dcc, html, Input, Output, State
 import dash_player
-import dash
-from dash import dcc, html, Input, Output
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.scripts.config.serve_locally = True
 
