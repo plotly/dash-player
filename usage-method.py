@@ -22,7 +22,7 @@ app.layout = html.Div(
 
 
 @app.callback(
-    Output("div-current-time", "children"), [Input("video-player", "currentTime")]
+    Output("div-current-time", "children"), Input("video-player", "currentTime")
 )
 def update_time(currentTime):
     return "Current Time: {}".format(currentTime)
@@ -30,14 +30,14 @@ def update_time(currentTime):
 
 @app.callback(
     Output("div-method-output", "children"),
-    [Input("video-player", "secondsLoaded")],
-    [State("video-player", "duration")],
+    Input("video-player", "secondsLoaded"),
+    State("video-player", "duration"),
 )
 def update_methods(secondsLoaded, duration):
     return "Second Loaded: {}, Duration: {}".format(secondsLoaded, duration)
 
 
-@app.callback(Output("video-player", "seekTo"), [Input("button-seek-to", "n_clicks")])
+@app.callback(Output("video-player", "seekTo"), Input("button-seek-to", "n_clicks"))
 def set_seekTo(n_clicks):
     return 10
 

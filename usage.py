@@ -26,27 +26,27 @@ app.layout = html.Div(
 )
 
 
-@app.callback(Output("video-player", "playing"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "playing"), Input("radio-bool-props", "value"))
 def update_prop_playing(values):
     return "playing" in values
 
 
-@app.callback(Output("video-player", "loop"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "loop"), Input("radio-bool-props", "value"))
 def update_prop_loop(values):
     return "loop" in values
 
 
-@app.callback(Output("video-player", "controls"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "controls"), Input("radio-bool-props", "value"))
 def update_prop_controls(values):
     return "controls" in values
 
 
-@app.callback(Output("video-player", "muted"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "muted"), Input("radio-bool-props", "value"))
 def update_prop_muted(values):
     return "muted" in values
 
 
-@app.callback(Output("video-player", "seekTo"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "seekTo"), Input("radio-bool-props", "value"))
 def update_prop_seekTo(values):
     if "seekTo" in values:
         return 5

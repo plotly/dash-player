@@ -126,41 +126,41 @@ app.layout = html.Div(
 
 @app.callback(
     Output("video-player", "url"),
-    [Input("button-update-url", "n_clicks")],
-    [State("input-url", "value")],
+    Input("button-update-url", "n_clicks"),
+    State("input-url", "value"),
     prevent_initial_call=True,
 )
 def update_url(n_clicks, value):
     return value
 
 
-@app.callback(Output("video-player", "playing"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "playing"), Input("radio-bool-props", "value"))
 def update_prop_playing(values):
     return "playing" in values
 
 
-@app.callback(Output("video-player", "loop"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "loop"), Input("radio-bool-props", "value"))
 def update_prop_loop(values):
     return "loop" in values
 
 
-@app.callback(Output("video-player", "controls"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "controls"), Input("radio-bool-props", "value"))
 def update_prop_controls(values):
     return "controls" in values
 
 
-@app.callback(Output("video-player", "muted"), [Input("radio-bool-props", "value")])
+@app.callback(Output("video-player", "muted"), Input("radio-bool-props", "value"))
 def update_prop_muted(values):
     return "muted" in values
 
 
-@app.callback(Output("video-player", "volume"), [Input("slider-volume", "value")])
+@app.callback(Output("video-player", "volume"), Input("slider-volume", "value"))
 def update_volume(value):
     return value
 
 
 @app.callback(
-    Output("video-player", "playbackRate"), [Input("slider-playback-rate", "value")]
+    Output("video-player", "playbackRate"), Input("slider-playback-rate", "value")
 )
 def update_playbackRate(value):
     return value
@@ -168,7 +168,7 @@ def update_playbackRate(value):
 
 # Instance Methods
 @app.callback(
-    Output("div-current-time", "children"), [Input("video-player", "currentTime")]
+    Output("div-current-time", "children"), Input("video-player", "currentTime")
 )
 def update_time(currentTime):
     return "Current Time: {}".format(currentTime)
@@ -176,8 +176,8 @@ def update_time(currentTime):
 
 @app.callback(
     Output("div-method-output", "children"),
-    [Input("video-player", "secondsLoaded")],
-    [State("video-player", "duration")],
+    Input("video-player", "secondsLoaded"),
+    State("video-player", "duration"),
 )
 def update_methods(secondsLoaded, duration):
     return "Second Loaded: {}, Duration: {}".format(secondsLoaded, duration)
@@ -185,7 +185,7 @@ def update_methods(secondsLoaded, duration):
 
 @app.callback(
     Output("video-player", "intervalCurrentTime"),
-    [Input("slider-intervalCurrentTime", "value")],
+    Input("slider-intervalCurrentTime", "value"),
 )
 def update_intervalCurrentTime(value):
     return value
@@ -193,7 +193,7 @@ def update_intervalCurrentTime(value):
 
 @app.callback(
     Output("video-player", "intervalSecondsLoaded"),
-    [Input("slider-intervalSecondsLoaded", "value")],
+    Input("slider-intervalSecondsLoaded", "value"),
 )
 def update_intervalSecondsLoaded(value):
     return value
@@ -201,13 +201,13 @@ def update_intervalSecondsLoaded(value):
 
 @app.callback(
     Output("video-player", "intervalDuration"),
-    [Input("slider-intervalDuration", "value")],
+    Input("slider-intervalDuration", "value"),
 )
 def update_intervalDuration(value):
     return value
 
 
-@app.callback(Output("video-player", "seekTo"), [Input("slider-seek-to", "value")])
+@app.callback(Output("video-player", "seekTo"), Input("slider-seek-to", "value"))
 def set_seekTo(value):
     return value
 
