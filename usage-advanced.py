@@ -16,7 +16,7 @@ app.layout = html.Div(
             children=[
                 dash_player.DashPlayer(
                     id="video-player",
-                    url="http://media.w3.org/2010/05/bunny/movie.mp4",
+                    url="http://media.w3.org/2010/05/bunny/movie.ogv",
                     controls=True,
                     width="100%",
                 ),
