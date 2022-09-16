@@ -16,7 +16,7 @@ app.layout = html.Div(
             children=[
                 dash_player.DashPlayer(
                     id="video-player",
-                    url="http://media.w3.org/2010/05/bunny/movie.ogv",
+                    url="https://media.w3.org/2010/05/sintel/trailer.mp4",
                     controls=True,
                     width="100%",
                 ),
@@ -25,13 +25,13 @@ app.layout = html.Div(
                 dcc.Markdown(
                     dedent(
                         """
-            ### Video Examples
-            * mp4: http://media.w3.org/2010/05/bunny/movie.mp4
-            * mp3: https://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3
-            * webm: https://media.w3.org/2010/05/sintel/trailer.webm
-            * ogv: http://media.w3.org/2010/05/bunny/movie.ogv
-            * Youtube: https://www.youtube.com/watch?v=sea2K4AuPOk
-            """
+                        ### Video Examples
+                        * mp4: https://media.w3.org/2010/05/bunny/trailer.mp4
+                        * mp3: https://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.mp3
+                        * webm: https://media.w3.org/2010/05/sintel/trailer.webm
+                        * ogv: http://media.w3.org/2010/05/bunny/movie.ogv
+                        * Youtube: https://www.youtube.com/watch?v=sea2K4AuPOk
+                        """
                     )
                 ),
             ],
@@ -40,7 +40,8 @@ app.layout = html.Div(
             style={"width": "30%", "float": "left"},
             children=[
                 dcc.Input(
-                    id="input-url", value="http://media.w3.org/2010/05/bunny/movie.mp4"
+                    id="input-url",
+                    value="https://media.w3.org/2010/05/sintel/trailer.mp4",
                 ),
                 html.Button("Change URL", id="button-update-url"),
                 dcc.Checklist(
@@ -105,7 +106,9 @@ app.layout = html.Div(
                     marks={i: str(i) for i in [200, 500, 750, 1000, 2000]},
                     value=500,
                 ),
-                html.P("Seek To:", style={"margin-top": "30px"}),
+                html.P(
+                    "Seek To (% of total media length):", style={"margin-top": "30px"}
+                ),
                 dcc.Slider(
                     id="slider-seek-to",
                     min=0,
@@ -119,6 +122,16 @@ app.layout = html.Div(
         ),
     ]
 )
+
+
+@app.callback(
+    Output("video-player", "url"),
+    [Input("button-update-url", "n_clicks")],
+    [State("input-url", "value")],
+    prevent_initial_call=True,
+)
+def update_url(n_clicks, value):
+    return value
 
 
 @app.callback(Output("video-player", "playing"), [Input("radio-bool-props", "value")])
@@ -150,15 +163,6 @@ def update_volume(value):
     Output("video-player", "playbackRate"), [Input("slider-playback-rate", "value")]
 )
 def update_playbackRate(value):
-    return value
-
-
-@app.callback(
-    Output("video-player", "url"),
-    [Input("button-update-url", "n_clicks")],
-    [State("input-url", "value")],
-)
-def update_url(n_clicks, value):
     return value
 
 
