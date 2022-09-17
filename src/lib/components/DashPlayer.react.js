@@ -140,7 +140,7 @@ export default class DashPlayer extends Component {
                 width={width}
                 height={height}
                 style={style}
-                playsline={playsinline}
+                playsinline={playsinline}
             />
         );
     }
