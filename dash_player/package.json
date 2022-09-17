@@ -2,48 +2,63 @@
   "name": "dash_player",
   "version": "0.0.1",
   "description": "Dash player component for videos",
-  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/plotly/dash-player.git"
+  },
+  "homepage": "https://github.com/plotly/dash-player",
+  "bugs": {
+    "url": "https://github.com/plotly/dash-player/issues"
+  },
+  "main": "dash_player/dash_player.min.js",
+  "author": "Xing Han Lu <xinghan@plot.ly>",
+  "maintainer": "Alex Hsu <alex.hsu@plot.ly>",
+  "license": "MIT",
+  "dependencies": {
+    "react-player": "2.11.0",
+    "ramda": "^0.28.0"
+  },
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",
     "validate-init": "python _validate_init.py",
-    "prepublish": "npm run validate-init",
-    "build:js-dev": "webpack --mode development",
-    "build:js": "webpack --mode production",
+    "build:js-dev": "webpack",
+    "build:js": "webpack",
     "build:py": "dash-generate-components ./src/lib/components dash_player",
     "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
     "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
     "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
   },
-  "author": "kris ycaokris@plot.ly",
-  "license": "MIT",
-  "dependencies": {
-    "react-player": "1.6.4",
-    "ramda": "^0.25.0",
-    "react": "15.4.2"
-  },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "copyfiles": "^2.0.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-react": "^7.9.1",
-    "npm": "^6.1.0",
-    "react-docgen": "^2.20.1",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.1",
-    "webpack-serve": "^1.0.2",
-    "react": ">=0.14",
-    "react-dom": ">=0.14"
+    "@types/node": "^18.7.18",
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "copyfiles": "^2.4.1",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-react": "^7.31.8",
+    "glob-parent": "6.0.2",
+    "npm": "^8.19.2",
+    "react": ">=18.2",
+    "react-docgen": "^5.4.3",
+    "react-dom": ">=18.2",
+    "styled-jsx": "^3.2.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-serve": "^4.0.0"
+  },
+  "peerDependencies": {
+    "browserslist": ">= 4.21.0",
+    "webpack": "^4.29.0"
   },
   "engines": {
-    "node": ">=8.11.0",
-    "npm": ">=6.1.0"
+    "node": ">=14.14.0",
+    "npm": ">=6.14.8"
   }
 }
