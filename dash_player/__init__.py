@@ -32,7 +32,24 @@ _current_path = _os.path.dirname(_os.path.abspath(__file__))
 _this_module = _sys.modules[__name__]
 
 
-_js_dist = [{"relative_package_path": "dash_player.min.js", "namespace": package_name}]
+_js_dist = [
+    {
+        "relative_package_path": "dash_player.min.js",
+        "namespace": package_name,
+        "external_url": (
+            "https://unpkg.com/@plotly/dash-player@{}" "/dash_player/dash_player.min.js"
+        ).format(__version__),
+    },
+    {
+        "relative_package_path": "dash_player.min.js.map",
+        "namespace": package_name,
+        "external_url": (
+            "https://unpkg.com/@plotly/dash-player@{}"
+            "/dash_player/dash_player.min.js.map"
+        ).format(__version__),
+        "dynamic": True,
+    },
+]
 
 _css_dist = []
 
