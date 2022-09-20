@@ -52,10 +52,6 @@
     "webpack-cli": "^4.10.0",
     "webpack-serve": "^4.0.0"
   },
-  "peerDependencies": {
-    "browserslist": ">= 4.21.0",
-    "webpack": "^4.29.0"
-  },
   "engines": {
     "node": ">=14.14.0",
     "npm": ">=6.14.8"

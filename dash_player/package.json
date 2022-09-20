@@ -1,6 +1,6 @@
 {
-  "name": "dash_player",
-  "version": "0.0.1",
+  "name": "@plotly/dash-player",
+  "version": "0.0.2",
   "description": "Dash player component for videos",
   "repository": {
     "type": "git",
@@ -15,15 +15,14 @@
   "maintainer": "Alex Hsu <alex.hsu@plot.ly>",
   "license": "MIT",
   "dependencies": {
-    "react-player": "2.11.0",
-    "ramda": "^0.28.0"
+    "react-player": "2.11.0"
   },
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",
     "validate-init": "python _validate_init.py",
     "build:js-dev": "webpack",
     "build:js": "webpack",
-    "build:py": "dash-generate-components ./src/lib/components dash_player",
+    "build:py": "dash-generate-components ./src/lib/components dash-player",
     "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
     "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
     "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
@@ -44,7 +43,6 @@
     "eslint-plugin-react": "^7.31.8",
     "glob-parent": "6.0.2",
     "npm": "^8.19.2",
-    "ramda": "0.28.0",
     "react": ">=18.2",
     "react-docgen": "^5.4.3",
     "react-dom": ">=18.2",
@@ -53,10 +51,6 @@
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-serve": "^4.0.0"
-  },
-  "peerDependencies": {
-    "browserslist": ">= 4.21.0",
-    "webpack": "^4.29.0"
   },
   "engines": {
     "node": ">=14.14.0",
