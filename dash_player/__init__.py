@@ -24,7 +24,6 @@ _filepath = _os.path.abspath(_os.path.join(_basepath, "package.json"))
 with open(_filepath) as f:
     package = json.load(f)
 
-package_name = package["name"].replace(" ", "_").replace("-", "_")
 __version__ = package["version"]
 
 _current_path = _os.path.dirname(_os.path.abspath(__file__))
@@ -35,14 +34,14 @@ _this_module = _sys.modules[__name__]
 _js_dist = [
     {
         "relative_package_path": "dash_player.min.js",
-        "namespace": package_name,
+        "namespace": "dash_player",
         "external_url": (
             "https://unpkg.com/@plotly/dash-player@{}" "/dash_player/dash_player.min.js"
         ).format(__version__),
     },
     {
         "relative_package_path": "dash_player.min.js.map",
-        "namespace": package_name,
+        "namespace": "dash_player",
         "external_url": (
             "https://unpkg.com/@plotly/dash-player@{}"
             "/dash_player/dash_player.min.js.map"
