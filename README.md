@@ -24,6 +24,15 @@ $ python usage-advanced.py
 
 Once that done, you can copy the `dash_player` package in the folder of your app, and import it within your app.
 
+## Build Manually
+
+To generate builds manually, run the following:
+
+```sh
+$ npm install webpack webpack-cli
+$ npm run build:all
+```
+
 ## Usage
 
 `usage.py` provides you with the basic functionality of the app. Use it to learn how to use the component.
