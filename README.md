@@ -24,7 +24,7 @@ $ python usage-advanced.py
 
 Once that done, you can copy the `dash_player` package in the folder of your app, and import it within your app.
 
-## Build Manually
+## Build manually
 
 To generate builds manually, run the following:
 
