@@ -183,7 +183,7 @@ DashPlayer.propTypes = {
     setProps: PropTypes.func,
 
     /**
-     * The url of a video or song to play
+     * The url of the media to be played.
      */
     url: PropTypes.string,
 
@@ -207,7 +207,7 @@ DashPlayer.propTypes = {
 
     /**
      * A number between 0 and 1 representing the volume of the player.
-     * If set to None, Dash Plauer ises default volume on all players.
+     * If set to None, Dash Player ises default volume on all players.
      */
     volume: PropTypes.number,
 
@@ -219,7 +219,7 @@ DashPlayer.propTypes = {
 
     /**
      * Set the playback rate of the player
-     * Only supported by YouTube, Wistia, and file paths
+     * Only supported by YouTube, Wistia, and file paths.
      */
     playbackRate: PropTypes.number,
 
