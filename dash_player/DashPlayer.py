@@ -12,7 +12,7 @@ and DailyMotion.
 Keyword arguments:
 
 - id (string; optional):
-    The ID used to identify this compnent in Dash callbacks.
+    The ID used to identify this component in Dash callbacks.
 
 - controls (boolean; default False):
     Set to True or False to display native player controls Vimeo,
@@ -25,7 +25,7 @@ Keyword arguments:
     Returns the duration (in seconds) of the currently playing media.
 
 - height (string; default '360px'):
-    Set the height of the player.
+    A number or string representing the pixel height of the player.
 
 - intervalCurrentTime (number; default 100):
     Interval in milliseconds at which currenTtime prop is updated.
@@ -37,17 +37,21 @@ Keyword arguments:
     Interval in milliseconds at which secondsLoaded prop is updated.
 
 - loop (boolean; default False):
-    Set to True or False to loop the media.
+    Whether or not the media will loop once the player reaches the
+    end. Can be set to True or False to set looping on or off,
+    respectively.
 
 - muted (boolean; default False):
-    Mutes the player Only works if volume is set.
+    Set to True or False to mute or unmute player volume,
+    respectively. Only works if volume is set.
 
 - playbackRate (number; default 1):
     Set the playback rate of the player Only supported by YouTube,
     Wistia, and file paths.
 
 - playing (boolean; default False):
-    Set to True or False to pause or play the media.
+    Whether or not the media is currently playing. Can be set to True
+    or False to play and pause the media, respectively.
 
 - playsinline (boolean; default False):
     Applies the html5 playsinline attribute where supported, which
@@ -62,18 +66,19 @@ Keyword arguments:
     between 0 and 1.
 
 - style (dict; optional):
-    Add inline styles to the root element.
+    Optional additional CSS styles. If width or height are supplied
+    within style, then this will override the component-level width or
+    height.
 
 - url (string; optional):
-    The url of a video or song to play ◦  Can be an array or
-    MediaStream object.
+    The url of a video or song to play.
 
 - volume (number; optional):
-    Set the volume of the player, between 0 and 1 None uses default
-    volume on all players.
+    A number between 0 and 1 representing the volume of the player. If
+    set to None, Dash Plauer ises default volume on all players.
 
 - width (string; default '640px'):
-    Set the width of the player."""
+    A number or string representing the pixel width of the player."""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'dash_player'
@@ -87,9 +92,6 @@ Keyword arguments:
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(DashPlayer, self).__init__(**args)
