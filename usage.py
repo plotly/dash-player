@@ -12,6 +12,7 @@ app.layout = html.Div(
             id="video-player",
             url="https://media.w3.org/2010/05/bunny/movie.ogv",
             controls=True,
+            className="test"
         ),
         dcc.Checklist(
             id="radio-bool-props",
