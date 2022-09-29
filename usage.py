@@ -11,8 +11,7 @@ app.layout = html.Div(
         dash_player.DashPlayer(
             id="video-player",
             url="https://media.w3.org/2010/05/bunny/movie.ogv",
-            controls=True,
-            className="test"
+            controls=True
         ),
         dcc.Checklist(
             id="radio-bool-props",
