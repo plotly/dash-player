@@ -153,6 +153,11 @@ DashPlayer.propTypes = {
     id: PropTypes.string,
 
     /**
+     * The CSS class used to identify this compnent in Dash callbacks
+     */
+     className: PropTypes.string,
+
+    /**
      * Dash-assigned callback that should be called whenever any of the
      * properties change
      */
