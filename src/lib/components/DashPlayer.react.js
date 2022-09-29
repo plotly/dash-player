@@ -146,31 +146,49 @@ export default class DashPlayer extends Component {
     }
 }
 
+DashPlayer.defaultProps = {
+    playing: false,
+    loop: false,
+    controls: false,
+    volume: null,
+    muted: false,
+    playbackRate: 1,
+    width: '640px',
+    height: '360px',
+    style:{},
+    playsinline: false,
+    seekTo: null,
+    intervalCurrentTime: 100,
+    intervalSecondsLoaded: 500,
+    intervalDuration: 500
+};
+
 DashPlayer.propTypes = {
     /**
-     * The ID used to identify this component in Dash callbacks
+     * The ID used to identify this component in Dash callbacks.
      */
     id: PropTypes.string,
 
     /**
-     * Dash-assigned callback that should be called whenever any of the
-     * properties change
+     * Dash-assigned callback that should be called to report property changes
+     * to Dash, to make them available for callbacks.
      */
     setProps: PropTypes.func,
 
     /**
      * The url of a video or song to play
-     * ◦  Can be an array or MediaStream object
      */
     url: PropTypes.string,
 
     /**
-     * Set to true or false to pause or play the media
+     * Whether or not the media is currently playing. Can be set to True
+     * or False to play and pause the media, respectively.
      */
     playing: PropTypes.bool,
 
     /**
-     * Set to true or false to loop the media
+     * Whether or not the media will loop once the player reaches the end.
+     * Can be set to True or False to set looping on or off, respectively.
      */
     loop: PropTypes.bool,
 
@@ -181,14 +199,14 @@ DashPlayer.propTypes = {
     controls: PropTypes.bool,
 
     /**
-     * Set the volume of the player, between 0 and 1
-     * null uses default volume on all players
+     * A number between 0 and 1 representing the volume of the player.
+     * If set to None, Dash Plauer ises default volume on all players.
      */
     volume: PropTypes.number,
 
     /**
-     * Mutes the player
-     * Only works if volume is set
+     * Set to true or false to mute or unmute player volume, respectively.
+     * Only works if volume is set.
      */
     muted: PropTypes.bool,
 
@@ -199,17 +217,18 @@ DashPlayer.propTypes = {
     playbackRate: PropTypes.number,
 
     /**
-     * Set the width of the player
+     * A number or string representing the pixel width of the player.
      */
     width: PropTypes.string,
 
     /**
-     * Set the height of the player
+     * A number or string representing the pixel height of the player.
      */
     height: PropTypes.string,
 
     /**
-     * Add inline styles to the root element
+     * Optional additional CSS styles. If width or height are supplied within style,
+     * then this will override the component-level width or height
      */
     style: PropTypes.object,
 
@@ -223,17 +242,17 @@ DashPlayer.propTypes = {
     // Below are instance Methods that are updated at a fixed intervals, and
     // used as a properties in dash callbacks.
     /**
-     * Returns the number of seconds that have been played
+     * Returns the number of seconds that have been played.
      */
     currentTime: PropTypes.number,
 
     /**
-     * Returns the number of seconds that have been loaded
+     * Returns the number of seconds that have been loaded.
      */
     secondsLoaded: PropTypes.number,
 
     /**
-     * Returns the duration (in seconds) of the currently playing media
+     * Returns the duration (in seconds) of the currently playing media.
      */
     duration: PropTypes.number,
 
@@ -256,21 +275,4 @@ DashPlayer.propTypes = {
      * Seek to the given number of seconds, or fraction if amount is between 0 and 1
      */
     seekTo: PropTypes.number
-};
-
-DashPlayer.defaultProps = {
-    playing: false,
-    loop: false,
-    controls: false,
-    volume: null,
-    muted: false,
-    playbackRate: 1,
-    width: '640px',
-    height: '360px',
-    style:{},
-    playsinline: false,
-    seekTo: null,
-    intervalCurrentTime: 100,
-    intervalSecondsLoaded: 500,
-    intervalDuration: 500
 };
