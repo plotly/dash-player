@@ -19,7 +19,7 @@ Keyword arguments:
 
 - controls (boolean; default False):
     Set to True or False to display native player controls Vimeo,
-    Twitch and Wistia player will always display controls.      
+    Twitch and Wistia player will always display controls.
 
 - currentTime (number; optional):
     Returns the number of seconds that have been played.
