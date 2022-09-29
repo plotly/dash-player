@@ -124,7 +124,8 @@ export default class DashPlayer extends Component {
             width,
             height,
             style,
-            playsinline
+            playsinline,
+            className
         } = this.props;
 
         return (
@@ -141,6 +142,7 @@ export default class DashPlayer extends Component {
                 height={height}
                 style={style}
                 playsinline={playsinline}
+                class={className}
             />
         );
     }
