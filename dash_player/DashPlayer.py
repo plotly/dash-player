@@ -12,11 +12,14 @@ and DailyMotion.
 Keyword arguments:
 
 - id (string; optional):
-    The ID used to identify this compnent in Dash callbacks.
+    The ID used to identify this component in Dash callbacks.
+
+- className (string; optional):
+    The CSS class used to identify this component in Dash callbacks.
 
 - controls (boolean; default False):
     Set to True or False to display native player controls Vimeo,
-    Twitch and Wistia player will always display controls.
+    Twitch and Wistia player will always display controls.      
 
 - currentTime (number; optional):
     Returns the number of seconds that have been played.
@@ -79,17 +82,14 @@ Keyword arguments:
     _namespace = 'dash_player'
     _type = 'DashPlayer'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, url=Component.UNDEFINED, playing=Component.UNDEFINED, loop=Component.UNDEFINED, controls=Component.UNDEFINED, volume=Component.UNDEFINED, muted=Component.UNDEFINED, playbackRate=Component.UNDEFINED, width=Component.UNDEFINED, height=Component.UNDEFINED, style=Component.UNDEFINED, playsinline=Component.UNDEFINED, currentTime=Component.UNDEFINED, secondsLoaded=Component.UNDEFINED, duration=Component.UNDEFINED, intervalCurrentTime=Component.UNDEFINED, intervalSecondsLoaded=Component.UNDEFINED, intervalDuration=Component.UNDEFINED, seekTo=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, url=Component.UNDEFINED, playing=Component.UNDEFINED, loop=Component.UNDEFINED, controls=Component.UNDEFINED, volume=Component.UNDEFINED, muted=Component.UNDEFINED, playbackRate=Component.UNDEFINED, width=Component.UNDEFINED, height=Component.UNDEFINED, style=Component.UNDEFINED, playsinline=Component.UNDEFINED, currentTime=Component.UNDEFINED, secondsLoaded=Component.UNDEFINED, duration=Component.UNDEFINED, intervalCurrentTime=Component.UNDEFINED, intervalSecondsLoaded=Component.UNDEFINED, intervalDuration=Component.UNDEFINED, seekTo=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
+        self.available_properties = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
-        for k in []:
-            if k not in args:
-                raise TypeError(
-                    'Required argument `' + k + '` was not specified.')
+        args = {k: _locals[k] for k in _explicit_args}
+
         super(DashPlayer, self).__init__(**args)
