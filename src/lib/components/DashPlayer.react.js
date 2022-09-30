@@ -124,7 +124,8 @@ export default class DashPlayer extends Component {
             width,
             height,
             style,
-            playsinline
+            playsinline,
+            className
         } = this.props;
 
         return (
@@ -141,6 +142,7 @@ export default class DashPlayer extends Component {
                 height={height}
                 style={style}
                 playsinline={playsinline}
+                class={className}
             />
         );
     }
@@ -148,9 +150,14 @@ export default class DashPlayer extends Component {
 
 DashPlayer.propTypes = {
     /**
-     * The ID used to identify this compnent in Dash callbacks
+     * The ID used to identify this component in Dash callbacks
      */
     id: PropTypes.string,
+
+    /**
+     * The CSS class used to identify this component in Dash callbacks
+     */
+     className: PropTypes.string,
 
     /**
      * Dash-assigned callback that should be called whenever any of the
