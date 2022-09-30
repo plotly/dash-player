@@ -112,6 +112,10 @@ export default class DashPlayer extends Component {
         this.setSeekTo();
     }
 
+    componentDidMount() {
+        this.updateDuration()
+    }
+
     render() {
         const {
             url,
