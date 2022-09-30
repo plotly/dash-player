@@ -3,51 +3,9 @@
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
 [![GitHub stars](https://img.shields.io/github/stars/xhlulu/dash-player.svg)](https://github.com/xhlulu/dash-player/stargazers)
 
-Dash Player is a Dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. It is wrapped around the react-player component.
+Dash Player is a Dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. It is wrapped around the [ReactPlayer](https://github.com/cookpete/react-player) component.
 
-For updates and more, please see the ongoing changes to the issues tracked in this repository or the Dash community discussion on Dash Player.
-
-This is a custom community component, so if your organization or company is interested in sponsoring enhancements to this project, [please reach out to the Plotly Dash team](https://plot.ly/dash/pricing).
-
-## Getting started
-
-Here are the following steps to get started with using Dash Player in your own Dash apps
-
-```sh
-$ git clone https://github.com/plotly/dash-player
-$ cd dash-player
-$ npm install
-```
-
-Once that's done, you can copy the `dash_player` package in the folder of your app, and import it within your app.
-
-## Build manually
-
-To generate builds manually, run the following:
-
-```sh
-$ npm install webpack webpack-cli
-$ npm run build:all
-```
-
-## Usage
-
-`usage.py` provides you with the basic functionality of the app. Use it to learn the most basic implementation of a Dash Player component.
-
-`usage-methods.py` allows you to test properties that are updated at an interval.
-
-`usage-advanced.py` gives an overview of the full functionality of the component, and serves as an extensive testing tool.
-
-## Documentation
-
-# Dash Player
-
-![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
-[![GitHub stars](https://img.shields.io/github/stars/xhlulu/dash-player.svg)](https://github.com/xhlulu/dash-player/stargazers)
-
-Dash Player is a Dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. It is wrapped around the react-player component.
-
-For updates and more, please see the ongoing changes to the issues tracked in this repository or the Dash community discussion on Dash Player.
+For updates and more, please see the ongoing changes to this repository's issue tracker or the Dash community discussion on Dash Player.
 
 This is a custom community component, so if your organization or company is interested in sponsoring enhancements to this project, [please reach out to the Plotly Dash team](https://plot.ly/dash/pricing).
 
@@ -108,7 +66,7 @@ $ npm run build:all
 ## Built With
 
 - [Dash](https://dash.plot.ly/) - Main server and interactive components
-- [react-player](https://www.npmjs.com/package/react-player) - The react component that was wrapped by this
+- [ReactPlayer](https://www.npmjs.com/package/react-player) - The react component that was wrapped by this
 
 ## Contributing
 
@@ -117,7 +75,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 ## Authors
 
 - **Xing Han** - _Initial Work_ - [@xhlulu](https://github.com/xhlulu)
-- **Alex Hsu** - _Maintainer_ - [@alexshoe](https://github.com/alexshoe)
+- **Alex Hsu** - _Maintainer/Ongoing Developer_ - [@alexshoe](https://github.com/alexshoe)
 - **Chris** - _Code Review_
 
 See also the list of [contributors](https://github.com/xhlulu/dash-player/contributors) who participated in this project.
@@ -125,28 +83,3 @@ See also the list of [contributors](https://github.com/xhlulu/dash-player/contri
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Acknowledgments
-
-## Built With
-
-- [Dash](https://dash.plot.ly/) - Main server and interactive components
-- [react-player](https://www.npmjs.com/package/react-player) - The react component that was wrapped by this
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Authors
-
-- **Xing Han** - _Initial Work_ - [@xhlulu](https://github.com/xhlulu)
-- **Alex Hsu** - _Maintainer_ - [@alexshoe](https://github.com/alexshoe)
-- **Chris** - _Code Review_
-
-See also the list of [contributors](https://github.com/xhlulu/dash-player/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Acknowledgments
