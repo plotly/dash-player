@@ -15,7 +15,7 @@ Keyword arguments:
     The ID used to identify this component in Dash callbacks.
 
 - className (string; optional):
-    The CSS class used to identify this component in Dash callbacks.
+    Used to identify the CSS class of the Dash Player component.
 
 - controls (boolean; default False):
     Set to True or False to display native player controls Vimeo,
