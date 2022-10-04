@@ -1,16 +1,16 @@
-Package: dashPlayer
-Title: Dash player component for videos
+Package: Dash Player
+Title: Dash component for playing a variety of media
 Version: 0.0.1
 Authors @R: as.person(c(Xing Han Lu <xinghan@plot.ly>))
 Description: Dash player component for videos
 Depends: R (>= 3.0.2)
-Imports: 
-    dash (>= 0.1.0) 
-Suggests: 
+Imports:
+dash (>= 0.1.0)
+Suggests:
 License: MIT + file LICENSE
 URL: https://github.com/plotly/dash-html-components
 BugReports: https://github.com/plotly/dash-html-components/issues
 Encoding: UTF-8
 LazyData: true
 Author: Xing Han Lu [aut]
-Maintainer: Ryan Patrick Kyle <ryan@plot.ly>
+Maintainer: Alex Hsu <alex.hsu@plot.ly>
