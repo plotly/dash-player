@@ -1,5 +1,5 @@
 {
-  "name": "dash-player",
+  "name": "@plotly/dash-player",
   "version": "0.0.2",
   "description": "Dash player component for videos",
   "repository": {
