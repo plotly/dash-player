@@ -22,8 +22,8 @@
     "validate-init": "python _validate_init.py",
     "build:js-dev": "webpack",
     "build:js": "webpack",
-    "build:py": "dash-generate-components ./src/lib/components dash-player",
-    "build": "npm run build:js && npm run build:js-dev && npm run build:py"
+    "build:backend": "dash-generate-components ./src/lib/components dash-player --r-prefix ''",
+    "build": "npm run build:js && npm run build:js-dev && npm run build:backend"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
