@@ -1,16 +1,16 @@
-Package: Dash Player
-Title: Dash component for playing a variety of media
-Version: 0.0.1
-Authors @R: as.person(c(Xing Han Lu <xinghan@plot.ly>))
-Description: Dash player component for videos
+Package: dashPlayer
+Title: Interactive Media Player Component for Dash
+
+Version: 0.0.2
+Description: Dash Player is a dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. It is wrapped around the react-player component.
+
 Depends: R (>= 3.0.2)
-Imports:
-dash (>= 0.1.0)
-Suggests:
+Imports: 
+Suggests: 
+Authors@R: person("Xing", "Lu", role = c("aut", "cre"), email = "xinghan@plot.ly")
 License: MIT + file LICENSE
-URL: https://github.com/plotly/dash-html-components
-BugReports: https://github.com/plotly/dash-html-components/issues
+URL: https://github.com/plotly/dash-player
+BugReports: https://github.com/plotly/dash-player/issues
 Encoding: UTF-8
 LazyData: true
-Author: Xing Han Lu [aut]
-Maintainer: Alex Hsu <alex.hsu@plot.ly>
+KeepSource: true
