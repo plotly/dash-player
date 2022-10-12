@@ -13,7 +13,7 @@ app.layout = html.Div(
             url="http://media.w3.org/2010/05/bunny/movie.ogv",
             controls=True,
         ),
-        # html.Button("Set seekTo to 10", id="button-seek-to"),
+        html.Button("Set seekTo to 10", id="button-seek-to"),
         html.Div(id="div-current-time", style={"margin-bottom": "20px"}),
         html.Div(id="div-method-output"),
     ]
@@ -36,9 +36,9 @@ def update_methods(secondsLoaded, duration):
     return "Second Loaded: {}, Duration: {}".format(secondsLoaded, duration)
 
 
-# @app.callback(Output("video-player", "seekTo"), Input("button-seek-to", "n_clicks"))
-# def set_seekTo(n_clicks):
-#     return 10
+@app.callback(Output("video-player", "seekTo"), Input("button-seek-to", "n_clicks"))
+def set_seekTo(n_clicks):
+    return 10
 
 
 if __name__ == "__main__":
