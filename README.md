@@ -27,7 +27,7 @@ To generate builds manually, run the following:
 
 ```sh
 $ npm install webpack webpack-cli
-$ npm run build:all
+$ npm run build
 ```
 
 ## Usage

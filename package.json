@@ -1,5 +1,5 @@
 {
-  "name": "dash-player",
+  "name": "@plotly/dash-player",
   "version": "0.0.2",
   "description": "Dash player component for videos",
   "repository": {
@@ -22,10 +22,8 @@
     "validate-init": "python _validate_init.py",
     "build:js-dev": "webpack",
     "build:js": "webpack",
-    "build:py": "dash-generate-components ./src/lib/components dash-player",
-    "build:py-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:py)",
-    "build:all": "npm run build:js && npm run build:js-dev && npm run build:py",
-    "build:all-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:all)"
+    "build:backend": "dash-generate-components ./src/lib/components dash-player --r-prefix ''",
+    "build": "npm run build:js && npm run build:js-dev && npm run build:backend"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
