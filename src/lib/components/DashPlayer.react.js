@@ -118,6 +118,7 @@ export default class DashPlayer extends Component {
 
     render() {
         const {
+            id,
             url,
             playing,
             loop,
@@ -135,6 +136,7 @@ export default class DashPlayer extends Component {
         return (
             <ReactPlayer
                 ref="player"
+                id={id}
                 url={url}
                 playing={playing}
                 loop={loop}
