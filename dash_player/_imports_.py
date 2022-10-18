@@ -1,5 +1,3 @@
 from .DashPlayer import DashPlayer
 
-__all__ = [
-    "DashPlayer"
-]
+__all__ = ["DashPlayer"]
