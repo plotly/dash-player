@@ -3,12 +3,14 @@ version: 2.1
 orbs:
   python: circleci/python@1.5.0
   browser-tools: circleci/browser-tools@1.4.0
+  node: circleci/node@5.0.3
 
 jobs:
   test-and-lint:
     docker:
       - image: cimg/python:3.9
     steps:
+      - node/install
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - checkout
@@ -17,12 +19,13 @@ jobs:
           pip-dependency-file: requirements-dev.txt
       - run:
           name: Lint with flake8
-          command: |
-            flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-            flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+          command: npm run lint
+      - run:
+          name: Build package
+          command: npm run build
       - run:
           name: Run tests
-          command: pytest --headless
+          command: npm run test -- --headless
 
 workflows:
   sample:
