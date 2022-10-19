@@ -2,14 +2,12 @@
 # Switch into a virtual environment
 # pip install -r requirements.txt
 
+packages/dash_player-0.0.2.tar.gz
 chromedriver-binary
-dash>=0.31.0
-dash-core-components
-dash-html-components
-dash-renderer
+dash==2.6.2
 ipdb
-percy
-selenium
-flake8
-pylint
-pytest-dash>=1.0.1
+percy==2.0.2
+selenium==4.2.0
+flake8==5.0.4
+dash[testing]
+pytest==7.1.3
