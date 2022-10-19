@@ -8,5 +8,4 @@ ipdb
 percy==2.0.2
 selenium==4.2.0
 flake8==5.0.4
-dash[testing]
 pytest==7.1.3
