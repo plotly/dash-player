@@ -22,12 +22,14 @@ jobs:
           command: npm run lint
       - run:
           name: Build package
-          command: npm run build
+          command: |
+            npm install
+            npm run build
       - run:
           name: Run tests
           command: npm run test -- --headless
 
 workflows:
-  sample:
+  run-tests:
     jobs:
       - test-and-lint
