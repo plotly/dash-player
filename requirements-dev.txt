@@ -10,3 +10,4 @@ selenium==4.2.0
 flake8==5.0.4
 dash[testing]
 pytest==7.1.3
+black==21.12b0
