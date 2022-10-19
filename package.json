@@ -23,7 +23,9 @@
     "build:js-dev": "webpack",
     "build:js": "webpack",
     "build:backends": "dash-generate-components ./src/lib/components dash-player --r-prefix ''",
-    "build": "npm run build:js && npm run build:js-dev && npm run build:backends"
+    "build": "npm run build:js && npm run build:js-dev && npm run build:backends",
+    "lint": "flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics && flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics",
+    "test": "pytest"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
