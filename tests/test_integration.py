@@ -125,18 +125,18 @@ def test_003_toggle_properties_via_callback(dash_duo):
     controls_btn = dash_duo.find_element("#controls-btn")
     muted_btn = dash_duo.find_element("#muted-btn")
 
+    assert dash_duo.find_element("#playing-div").text == "None"
     playing_btn.click()
-    dash_duo.wait_for_text_to_equal("#playing-div", "True", timeout=10)
     assert dash_duo.find_element("#playing-div").text == "True"
 
+    assert dash_duo.find_element("#loop-div").text == "None"
     loop_btn.click()
-    dash_duo.wait_for_text_to_equal("#loop-div", "True", timeout=10)
     assert dash_duo.find_element("#loop-div").text == "True"
 
+    assert dash_duo.find_element("#controls-div").text == "None"
     controls_btn.click()
-    dash_duo.wait_for_text_to_equal("#controls-div", "True", timeout=10)
     assert dash_duo.find_element("#controls-div").text == "True"
 
+    assert dash_duo.find_element("#muted-div").text == "None"
     muted_btn.click()
-    dash_duo.wait_for_text_to_equal("#muted-div", "True", timeout=10)
     assert dash_duo.find_element("#muted-div").text == "True"
