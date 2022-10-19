@@ -3,18 +3,7 @@ from dash import html, Input, Output, State
 from dash_player import DashPlayer
 
 
-def test_001_child_with_0(dash_duo):
-    app = dash.Dash(__name__)
-    app.layout = html.Div(id="nully-wrapper", children=0)
-    dash_duo.start_server(app)
-    dash_duo.wait_for_text_to_equal("#nully-wrapper", "0", timeout=4)
-
-    assert dash_duo.find_element("#nully-wrapper").text == "0"
-    assert dash_duo.get_logs() == [], "browser console should contain no error"
-    dash_duo.percy_snapshot("test_001_child_with_0-layout")
-
-
-def test_002_dash_player_exists_with_size(dash_duo):
+def test_001_dash_player_exists_with_size(dash_duo):
     app = dash.Dash(__name__)
     app.layout = html.Div(
         children=[
@@ -38,10 +27,9 @@ def test_002_dash_player_exists_with_size(dash_duo):
         == "https://media.w3.org/2010/05/bunny/movie.ogv"
     )
     assert dash_duo.get_logs() == [], "browser console should contain no error"
-    dash_duo.percy_snapshot("test_002_dash_player_exists-layout")
 
 
-def test_003_styling(dash_duo):
+def test_002_styling(dash_duo):
     app = dash.Dash(__name__)
     app.layout = html.Div(
         children=[
@@ -60,7 +48,6 @@ def test_003_styling(dash_duo):
         == "border: 5px solid red; border-radius: 10px; width: 640px; height: 360px;"
     )
     assert dash_duo.get_logs() == [], "browser console should contain no error"
-    dash_duo.percy_snapshot("test_002_dash_player_exists-layout")
 
 
 def test_003_toggle_properties_via_callback(dash_duo):
@@ -153,5 +140,3 @@ def test_003_toggle_properties_via_callback(dash_duo):
     muted_btn.click()
     dash_duo.wait_for_text_to_equal("#muted-div", "True", timeout=10)
     assert dash_duo.find_element("#muted-div").text == "True"
-
-    dash_duo.percy_snapshot("test_003_toggle_properties_via_callback-layout")
