@@ -3,7 +3,7 @@
 # pip install -r requirements.txt
 
 chromedriver-binary
-dash==2.6.2
+dash[ci,dev,testing]==2.6.2
 ipdb
 percy==2.0.2
 selenium==4.2.0
