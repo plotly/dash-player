@@ -14,11 +14,6 @@
   "author": "Xing Han Lu <xinghan@plot.ly>",
   "maintainer": "Alex Hsu <alex.hsu@plot.ly>",
   "license": "MIT",
-  "dependencies": {
-    "16": "0.0.2",
-    "npm": "^8.15.0",
-    "react-player": "2.11.0"
-  },
   "scripts": {
     "start": "webpack-serve ./webpack.serve.config.js --open",
     "validate-init": "python _validate_init.py",
