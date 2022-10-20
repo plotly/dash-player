@@ -10,7 +10,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 ## Changed
 
 - [#53](https://github.com/plotly/dash-player/pull/53) Use README as package description
-- [#54](https://github.com/plotly/dash-player/pull/54) Bump `npm` and `node` versions
+- [#54](https://github.com/plotly/dash-player/pull/54) Bump `npm` and `node` versions and remove an obsolete file to reduce the package size
 
 ---
 
