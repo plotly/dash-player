@@ -19,7 +19,6 @@ setup(
     description=("A Dash component for playing a variety of URLs."),
     long_description=io.open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    install_requires=[],
     python_requires=">=3.6",
     url="https://github.com/plotly/dash-player",
     install_requires=["dash>=1.6.1"],
