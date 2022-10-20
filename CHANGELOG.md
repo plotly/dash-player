@@ -5,6 +5,15 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.2] - 2022-10-20
+
+## Changed
+
+- [#53](https://github.com/plotly/dash-player/pull/53) Use README as package description
+- [#54](https://github.com/plotly/dash-player/pull/54) Bump `npm` and `node` versions
+
+---
+
 ## [1.0.0] - 2022-10-20
 
 This release is `v1.0.0` to indicate that `dash-player` is now considered production-ready.
