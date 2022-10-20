@@ -14,29 +14,8 @@ This is a custom community component, so if your organization or company is inte
 Here are the following steps to get started with using Dash Player in your own Dash apps
 
 ```sh
-$ git clone https://github.com/plotly/dash-player
-$ cd dash-player
-$ npm install
+$ pip install dash-player
 ```
-
-Once that's done, you can copy the `dash_player` package in the folder of your app, and import it within your app.
-
-## Build manually
-
-To generate builds manually, run the following:
-
-```sh
-$ npm install webpack webpack-cli
-$ npm run build
-```
-
-## Usage
-
-`usage.py` provides you with the basic functionality of the app. Use it to learn the most basic implementation of a Dash Player component.
-
-`usage-methods.py` allows you to test properties that are updated at an interval.
-
-`usage-advanced.py` gives an overview of the full functionality of the component, and serves as an extensive testing tool.
 
 ## Documentation
 
@@ -76,7 +55,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 - **Xing Han** - _Initial Work_ - [@xhlulu](https://github.com/xhlulu)
 - **Alex Hsu** - _Maintainer/Ongoing Developer_ - [@alexshoe](https://github.com/alexshoe)
-- **Chris** - _Code Review_
+- **Alex Johnson** - _Code Review_ - [@alexcjohnson](https://github.com/alexcjohnson)
 
 See also the list of [contributors](https://github.com/xhlulu/dash-player/contributors) who participated in this project.
 
