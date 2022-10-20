@@ -20,4 +20,13 @@ setup(
     long_description=io.open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     install_requires=[],
+    python_requires=">=3.6",
+    url="https://github.com/plotly/dash-player",
+    install_requires=["dash>=1.6.1"],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Framework :: Dash",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
 )
