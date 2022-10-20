@@ -7,7 +7,7 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [1.0.0] - 2022-10-20
 
-This release is `v1.0.0` as it that `dash-player` is now production-ready.
+This release is `v1.0.0` to indicate that `dash-player` is now considered production-ready.
 
 ### Added
 
