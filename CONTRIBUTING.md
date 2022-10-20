@@ -5,7 +5,8 @@
 To generate builds manually, run the following:
 
 ```sh
-$ npm install webpack webpack-cli
+$ pip install -r requirements-dev.txt
+$ npm install
 $ npm run build
 ```
 
