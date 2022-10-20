@@ -2,7 +2,7 @@
 
 ## Build manually
 
-The following versions are being used to build the latest version of this package:
+We recommend the following versions to build this package:
 
 - `node`: 16.17.0
 - `npm`: 8.15.0
