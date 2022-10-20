@@ -1,3 +1,4 @@
+import io
 import json
 import os
 from setuptools import setup
@@ -15,6 +16,16 @@ setup(
     packages=[package_name],
     include_package_data=True,
     license=package["license"],
-    description=package["description"] if "description" in package else package_name,
-    install_requires=[],
+    description=("A Dash component for playing a variety of URLs."),
+    long_description=io.open("README.md", encoding="utf-8").read(),
+    long_description_content_type="text/markdown",
+    python_requires=">=3.6",
+    url="https://github.com/plotly/dash-player",
+    install_requires=["dash>=1.6.1"],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Framework :: Dash",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
 )
