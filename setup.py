@@ -1,3 +1,4 @@
+import io
 import json
 import os
 from setuptools import setup
@@ -15,6 +16,6 @@ setup(
     packages=[package_name],
     include_package_data=True,
     license=package["license"],
-    description=package["description"] if "description" in package else package_name,
+    long_description=io.open("README.md", encoding="utf-8").read(),
     install_requires=[],
 )
