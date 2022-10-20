@@ -53,7 +53,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Authors
 
-- **Xing Han** - _Initial Work_ - [@xhlulu](https://github.com/xhlulu)
+- **Xing Han** - _Initial Work_ - [@xhluca](https://github.com/xhluca)
 - **Alex Hsu** - _Maintainer/Ongoing Developer_ - [@alexshoe](https://github.com/alexshoe)
 - **Alex Johnson** - _Code Review_ - [@alexcjohnson](https://github.com/alexcjohnson)
 
