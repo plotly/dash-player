@@ -1,6 +1,6 @@
 {
   "name": "@plotly/dash-player",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dash player component for videos",
   "repository": {
     "type": "git",
@@ -15,6 +15,8 @@
   "maintainer": "Alex Hsu <alex.hsu@plot.ly>",
   "license": "MIT",
   "dependencies": {
+    "16": "0.0.2",
+    "npm": "^8.15.0",
     "react-player": "2.11.0"
   },
   "scripts": {
