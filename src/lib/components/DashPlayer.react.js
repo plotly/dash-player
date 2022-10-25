@@ -270,7 +270,7 @@ DashPlayer.propTypes = {
     duration: PropTypes.number,
 
     /**
-     * Interval in milliseconds at which currenTtime prop is updated.
+     * Interval in milliseconds at which currentTime prop is updated.
      */
     intervalCurrentTime: PropTypes.number,
 
