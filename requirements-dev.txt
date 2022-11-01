@@ -1,1 +1,2 @@
 dash[ci,dev,testing]==2.6.2
+pytest<7.2.0
