@@ -31,7 +31,7 @@ Keyword arguments:
     A number or string representing the pixel height of the player.
 
 - intervalCurrentTime (number; default 100):
-    Interval in milliseconds at which currenTtime prop is updated.
+    Interval in milliseconds at which currentTime prop is updated.
 
 - intervalDuration (number; default 500):
     Interval in milliseconds at which duration prop is updated.
@@ -95,6 +95,9 @@ Keyword arguments:
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
         _locals.update(kwargs)  # For wildcard attrs and excess named props
-        args = {k: _locals[k] for k in _explicit_args}
-
+        args = {k: _locals[k] for k in _explicit_args if k != 'children'}
+        for k in []:
+            if k not in args:
+                raise TypeError(
+                    'Required argument `' + k + '` was not specified.')
         super(DashPlayer, self).__init__(**args)

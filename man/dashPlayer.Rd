@@ -32,7 +32,7 @@ Vimeo, Twitch and Wistia player will always display controls}
 
 \item{height}{Character. A number or string representing the pixel height of the player.}
 
-\item{intervalCurrentTime}{Numeric. Interval in milliseconds at which currenTtime prop is updated.}
+\item{intervalCurrentTime}{Numeric. Interval in milliseconds at which currentTime prop is updated.}
 
 \item{intervalDuration}{Numeric. Interval in milliseconds at which duration prop is updated.}
 
