@@ -31,7 +31,7 @@ Keyword arguments:
     A number or string representing the pixel height of the player.
 
 - intervalCurrentTime (number; default 100):
-    Interval in milliseconds at which currenTtime prop is updated.
+    Interval in milliseconds at which currentTime prop is updated.
 
 - intervalDuration (number; default 500):
     Interval in milliseconds at which duration prop is updated.
