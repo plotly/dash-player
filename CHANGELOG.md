@@ -5,6 +5,14 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.3] - 2022-11-10
+
+## Fixed
+
+- [#57](https://github.com/plotly/dash-player/pull/57) Fix typo in property description
+
+---
+
 ## [1.0.2] - 2022-10-20
 
 ## Changed
