@@ -5,6 +5,18 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [1.0.4] - 2022-12-02
+
+## Fixed
+
+- [#62](https://github.com/plotly/dash-player/pull/62) Fix typo in README
+
+## Changed
+
+- [#62](https://github.com/plotly/dash-player/pull/62) Remove `usage-method.py` and revamp `usage-advanced.py`
+
+---
+
 ## [1.0.3] - 2022-11-10
 
 ## Fixed
