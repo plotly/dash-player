@@ -78,7 +78,7 @@ app.layout = html.Div(
                                             ],
                                             style={
                                                 "display": "flex",
-                                                "flex-direction": "column",
+                                                "flexDirection": "column",
                                             },
                                         ),
                                     ],
@@ -86,7 +86,7 @@ app.layout = html.Div(
                             ],
                             style={
                                 "display": "flex",
-                                "flex-direction": "row",
+                                "flexDirection": "row",
                                 "padding": "10px",
                             },
                         ),
@@ -123,12 +123,12 @@ app.layout = html.Div(
                             ],
                             style={
                                 "display": "flex",
-                                "flex-direction": "row",
-                                "justify-content": "space-between",
-                                "margin-bottom": "5px",
+                                "flexDirection": "row",
+                                "justifyContent": "space-between",
+                                "marginBottom": "5px",
                             },
                         ),
-                        html.P("Volume:", style={"margin-top": "30px"}),
+                        html.P("Volume:", style={"marginTop": "30px"}),
                         dcc.Slider(
                             id="slider-volume",
                             min=0,
@@ -138,7 +138,7 @@ app.layout = html.Div(
                             updatemode="drag",
                             marks={0: "0%", 1: "100%"},
                         ),
-                        html.P("Playback Rate:", style={"margin-top": "25px"}),
+                        html.P("Playback Rate:", style={"marginTop": "25px"}),
                         dcc.Slider(
                             id="slider-playback-rate",
                             min=0,
@@ -153,7 +153,7 @@ app.layout = html.Div(
                         ),
                         html.P(
                             "Update Interval for Current Time:",
-                            style={"margin-top": "30px"},
+                            style={"marginTop": "30px"},
                         ),
                         dcc.Slider(
                             id="slider-intervalCurrentTime",
@@ -166,7 +166,7 @@ app.layout = html.Div(
                         ),
                         html.P(
                             "Update Interval for Seconds Loaded:",
-                            style={"margin-top": "30px"},
+                            style={"marginTop": "30px"},
                         ),
                         dcc.Slider(
                             id="slider-intervalSecondsLoaded",
@@ -179,7 +179,7 @@ app.layout = html.Div(
                         ),
                         html.P(
                             "Update Interval for Duration:",
-                            style={"margin-top": "30px"},
+                            style={"marginTop": "30px"},
                         ),
                         dcc.Slider(
                             id="slider-intervalDuration",
@@ -195,8 +195,8 @@ app.layout = html.Div(
             ],
             style={
                 "display": "flex",
-                "flex-direction": "row",
-                "justify-content": "space-between",
+                "flexDirection": "row",
+                "justifyContent": "space-between",
             },
         ),
     ],
