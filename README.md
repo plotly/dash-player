@@ -37,7 +37,7 @@ $ pip install dash-player
 | `currentTime`           | Returns the number of seconds that have been played                                                                                                                               |
 | `secondsLoaded`         | Returns the number of seconds that have been loaded                                                                                                                               |
 | `duration`              | Returns the duration (in seconds) of the currently playing media                                                                                                                  |
-| `intervalCurrentTime`   | Interval in milliseconds at which currenTtime prop is updated.                                                                                                                    | `40`    |
+| `intervalCurrentTime`   | Interval in milliseconds at which currentTime prop is updated.                                                                                                                    | `40`    |
 | `intervalSecondsLoaded` | Interval in milliseconds at which secondsLoaded prop is updated.                                                                                                                  | `500`   |
 | `intervalDuration`      | Interval in milliseconds at which duration prop is updated.                                                                                                                       | `500`   |
 | `seekTo`                | Seek to the given number of seconds, or fraction if amount is between `0` and `1`                                                                                                 | `null`  |
