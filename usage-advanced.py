@@ -18,12 +18,14 @@ urls = {
 
 app.layout = html.Div(
     [
-        html.Div(html.H1("dash-player Advanced Usage")),
         html.Div(
             [
                 html.Div(
                     style={"width": "45%", "padding": "10px"},
                     children=[
+                        html.H1(
+                            "dash-player Advanced Usage", style={"marginTop": "0px"}
+                        ),
                         dash_player.DashPlayer(
                             id="video-player",
                             url="https://media.w3.org/2010/05/sintel/trailer.mp4",
