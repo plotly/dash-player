@@ -23,9 +23,6 @@ app.layout = html.Div(
                 html.Div(
                     style={"width": "45%", "padding": "10px"},
                     children=[
-                        html.H1(
-                            "dash-player Advanced Usage", style={"marginTop": "0px"}
-                        ),
                         dash_player.DashPlayer(
                             id="video-player",
                             url="https://media.w3.org/2010/05/sintel/trailer.mp4",
@@ -81,6 +78,7 @@ app.layout = html.Div(
                                             style={
                                                 "display": "flex",
                                                 "flexDirection": "column",
+                                                "width": "80px",
                                             },
                                         ),
                                     ],
@@ -112,16 +110,6 @@ app.layout = html.Div(
                                     ],
                                     value=["controls"],
                                 ),
-                                html.Div(
-                                    [
-                                        dcc.Input(
-                                            id="seekto-input",
-                                            type="number",
-                                            placeholder="seekTo value",
-                                        ),
-                                        html.Button("seekTo", id="seekto-btn"),
-                                    ],
-                                ),
                             ],
                             style={
                                 "display": "flex",
@@ -130,27 +118,34 @@ app.layout = html.Div(
                                 "marginBottom": "5px",
                             },
                         ),
+                        html.Div(
+                            [
+                                dcc.Input(
+                                    id="seekto-input",
+                                    type="number",
+                                    placeholder="seekTo value",
+                                ),
+                                html.Button("seekTo", id="seekto-btn"),
+                            ],
+                        ),
                         html.P("Volume:", style={"marginTop": "30px"}),
                         dcc.Slider(
                             id="slider-volume",
                             min=0,
                             max=1,
                             step=0.05,
-                            value=None,
+                            value=0.5,
                             updatemode="drag",
-                            marks={0: "0%", 1: "100%"},
+                            marks={0: "0%", 0.5: "50%", 1: "100%"},
                         ),
                         html.P("Playback Rate:", style={"marginTop": "25px"}),
                         dcc.Slider(
                             id="slider-playback-rate",
                             min=0,
-                            max=4,
+                            max=2,
                             step=None,
                             updatemode="drag",
-                            marks={
-                                i: str(i) + "x"
-                                for i in [0, 0.25, 0.5, 0.75, 1, 2, 3, 4]
-                            },
+                            marks={i: str(i) + "x" for i in [0, 0.5, 1, 1.5, 2]},
                             value=1,
                         ),
                         html.P(
@@ -159,12 +154,12 @@ app.layout = html.Div(
                         ),
                         dcc.Slider(
                             id="slider-intervalCurrentTime",
-                            min=40,
+                            min=0,
                             max=1000,
                             step=None,
                             updatemode="drag",
-                            marks={i: str(i) for i in [40, 100, 200, 500, 1000]},
-                            value=100,
+                            marks={i: str(i) for i in [0, 250, 500, 750, 1000]},
+                            value=250,
                         ),
                         html.P(
                             "Update Interval for Seconds Loaded:",
@@ -172,11 +167,11 @@ app.layout = html.Div(
                         ),
                         dcc.Slider(
                             id="slider-intervalSecondsLoaded",
-                            min=200,
-                            max=2000,
+                            min=0,
+                            max=1000,
                             step=None,
                             updatemode="drag",
-                            marks={i: str(i) for i in [200, 500, 750, 1000, 2000]},
+                            marks={i: str(i) for i in [0, 250, 500, 750, 1000]},
                             value=500,
                         ),
                         html.P(
@@ -185,11 +180,11 @@ app.layout = html.Div(
                         ),
                         dcc.Slider(
                             id="slider-intervalDuration",
-                            min=200,
-                            max=2000,
+                            min=0,
+                            max=1000,
                             step=None,
                             updatemode="drag",
-                            marks={i: str(i) for i in [200, 500, 750, 1000, 2000]},
+                            marks={i: str(i) for i in [0, 250, 500, 750, 1000]},
                             value=500,
                         ),
                     ],
@@ -310,4 +305,4 @@ def update_prop_seekTo(n_clicks, seekto):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run_server(debug=True)
