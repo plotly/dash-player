@@ -62,3 +62,12 @@ See also the list of [contributors](https://github.com/xhlulu/dash-player/contri
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Partnership
+
+Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence
+
+<p float="left">
+<img src="https://user-images.githubusercontent.com/42301846/205996088-f719228c-166d-46d2-b41c-bf5b93c56d9b.png" width=100px>
+<img src="https://user-images.githubusercontent.com/42301846/205995821-a4bd3113-2c2e-4014-a50f-24bc7fc18faf.png" width=100px>
+</p>
