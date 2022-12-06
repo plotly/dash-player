@@ -5,8 +5,8 @@ This project adheres to [Semantic Versioning](https://semver.org/).
 
 Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence.
 
-<p float="left">
-<img src="https://user-images.githubusercontent.com/42301846/205996088-f719228c-166d-46d2-b41c-bf5b93c56d9b.png" width=15%>
+<p float="left" align="center" >
+<img src="https://user-images.githubusercontent.com/42301846/205996088-f719228c-166d-46d2-b41c-bf5b93c56d9b.png" width=15% aspect-ratio=3/10 >
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/42301846/205995821-a4bd3113-2c2e-4014-a50f-24bc7fc18faf.png" width=15%>
 </p>
