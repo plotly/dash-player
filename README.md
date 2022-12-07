@@ -65,7 +65,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Partnership
 
-Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence.
+Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for Battery Cells.
 
 <p float="left" align="center" >
 <img src="https://user-images.githubusercontent.com/42301846/205996088-f719228c-166d-46d2-b41c-bf5b93c56d9b.png" width=15% aspect-ratio=3/10 >
