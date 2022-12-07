@@ -64,3 +64,13 @@ See also the list of [contributors](https://github.com/xhlulu/dash-player/contri
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Partnership
+
+Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for Battery Cells.
+
+<p float="left" align="center" >
+<img src="https://user-images.githubusercontent.com/42301846/205996088-f719228c-166d-46d2-b41c-bf5b93c56d9b.png" width=15% aspect-ratio=3/10 >
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://user-images.githubusercontent.com/42301846/205995821-a4bd3113-2c2e-4014-a50f-24bc7fc18faf.png" width=15%>
+</p>
