@@ -5,6 +5,8 @@
 
 Dash Player is a Dash component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia, Mixcloud, and DailyMotion. It is wrapped around the [ReactPlayer](https://github.com/cookpete/react-player) component.
 
+For more detailed documentation on Dash Player and how to use it, visit the official [Dash Player documentation page](https://dash.plotly.com/dash-player)
+
 For updates and more, please see the ongoing changes to this repository's issue tracker or the Dash community discussion on Dash Player.
 
 This is a custom community component, so if your organization or company is interested in sponsoring enhancements to this project, [please reach out to the Plotly Dash team](https://plot.ly/dash/pricing).
