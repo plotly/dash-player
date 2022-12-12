@@ -11,6 +11,14 @@ Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for
 
 ---
 
+## [1.0.6] - 2022-12-12
+
+## Changed
+
+- [#68](https://github.com/plotly/dash-player/pull/66) Change partnership info and improve logo readability
+
+---
+
 ## [1.0.5] - 2022-12-08
 
 ### Added
