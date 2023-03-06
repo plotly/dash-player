@@ -10,6 +10,18 @@ version = "1.0.6", src = list(href = NULL,
 file = "deps"), meta = NULL,
 script = 'dash_player.min.js.map',
 stylesheet = NULL, head = NULL, attachment = NULL, package = "dashPlayer",
+all_files = FALSE, dynamic = TRUE), class = "html_dependency"),
+`dash_player` = structure(list(name = "dash_player",
+version = "1.0.6", src = list(href = NULL,
+file = "deps"), meta = NULL,
+script = 'async-dashplayer.js',
+stylesheet = NULL, head = NULL, attachment = NULL, package = "dashPlayer",
+all_files = FALSE, async = TRUE), class = "html_dependency"),
+`dash_player` = structure(list(name = "dash_player",
+version = "1.0.6", src = list(href = NULL,
+file = "deps"), meta = NULL,
+script = 'async-dashplayer.js.map',
+stylesheet = NULL, head = NULL, attachment = NULL, package = "dashPlayer",
 all_files = FALSE, dynamic = TRUE), class = "html_dependency"))
 return(deps_metadata)
 }

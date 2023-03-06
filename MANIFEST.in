@@ -1,5 +1,7 @@
 include dash_player/dash_player.min.js
 include dash_player/dash_player.dev.js
+include dash_player/async-dashplayer.js
+include dash_player/async-dashplayer.js.map
 include dash_player/metadata.json
 include dash_player/package.json
 include README.md
