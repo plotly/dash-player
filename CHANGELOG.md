@@ -11,6 +11,11 @@ Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for
 
 ---
 
+## Unreleased
+
+## Changed
+- [#73](https://github.com/plotly/dash-player/pull/73) Converted the JS bundle to async loading
+
 ## [1.0.6] - 2022-12-12
 
 ## Changed

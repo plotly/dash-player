@@ -48,6 +48,24 @@ _js_dist = [
         ).format(__version__),
         "dynamic": True,
     },
+    {
+        "relative_package_path": "async-dashplayer.js",
+        "namespace": "dash_player",
+        "external_url": (
+            "https://unpkg.com/@plotly/dash-player@{}"
+            "/dash_player/async-dashplayer.js"
+        ).format(__version__),
+        'async': True
+    },
+    {
+        "relative_package_path": "async-dashplayer.js.map",
+        "namespace": "dash_player",
+        "external_url": (
+            "https://unpkg.com/@plotly/dash-player@{}"
+            "/dash_player/async-dashplayer.js.map"
+        ).format(__version__),
+        'dynamic': True
+    },
 ]
 
 _css_dist = []
