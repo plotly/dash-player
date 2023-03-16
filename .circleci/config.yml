@@ -28,6 +28,9 @@ jobs:
       - run:
           name: Run tests
           command: npm run test -- --headless
+      - run:
+          name: Run tests using React 18
+          command: REACT_VERSION=18.2.0 npm run test -- --headless
 
 workflows:
   run-tests:
