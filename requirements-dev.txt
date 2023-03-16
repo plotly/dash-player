@@ -1,1 +1,1 @@
-dash[ci,dev,testing]==2.7.0
+dash[ci,dev,testing]==2.9.0
