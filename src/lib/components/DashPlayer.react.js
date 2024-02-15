@@ -1,7 +1,12 @@
-import React, {Component, lazy, Suspense} from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 
-const RealDashPlayer = lazy(() => import(/* webpackChunkName: "dashplayer" */ '../fragments/DashPlayer.react'));
+const RealDashPlayer = lazy(
+    () =>
+        import(
+            /* webpackChunkName: "dashplayer" */ '../fragments/DashPlayer.react'
+        )
+);
 
 /**
  * A Dash component for playing a variety of URLs, including file paths,
@@ -28,8 +33,9 @@ DashPlayer.defaultProps = {
     playbackRate: 1,
     width: '640px',
     height: '360px',
-    style:{},
+    style: {},
     playsinline: false,
+    seekToMode: undefined,
     seekTo: null,
     intervalCurrentTime: 100,
     intervalSecondsLoaded: 500,
@@ -152,7 +158,13 @@ DashPlayer.propTypes = {
     /**
      * Seek to the given number of seconds, or fraction if amount is between 0 and 1
      */
-    seekTo: PropTypes.number
+    seekTo: PropTypes.number,
+
+    /**
+     * Seek to mode (can be "seconds" or "fraction"), overwrites default behaviour
+     * of seekTo that uses fraction or seconds depending on value.
+     */
+    seekToMode: PropTypes.string
 };
 
 export const propTypes = DashPlayer.propTypes;
