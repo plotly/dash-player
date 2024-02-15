@@ -68,6 +68,11 @@ Keyword arguments:
     Seek to the given number of seconds, or fraction if amount is
     between 0 and 1.
 
+- seekToMode (string; default undefined):
+    Seek to mode (can be \"seconds\" or \"fraction\"), overwrites
+    default behaviour of seekTo that uses fraction or seconds
+    depending on value.
+
 - style (dict; optional):
     Optional additional CSS styles. If width or height are supplied
     within style, then this will override the component-level width or
@@ -87,10 +92,10 @@ Keyword arguments:
     _namespace = 'dash_player'
     _type = 'DashPlayer'
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, url=Component.UNDEFINED, playing=Component.UNDEFINED, loop=Component.UNDEFINED, controls=Component.UNDEFINED, volume=Component.UNDEFINED, muted=Component.UNDEFINED, playbackRate=Component.UNDEFINED, width=Component.UNDEFINED, height=Component.UNDEFINED, style=Component.UNDEFINED, playsinline=Component.UNDEFINED, currentTime=Component.UNDEFINED, secondsLoaded=Component.UNDEFINED, duration=Component.UNDEFINED, intervalCurrentTime=Component.UNDEFINED, intervalSecondsLoaded=Component.UNDEFINED, intervalDuration=Component.UNDEFINED, seekTo=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
+    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, url=Component.UNDEFINED, playing=Component.UNDEFINED, loop=Component.UNDEFINED, controls=Component.UNDEFINED, volume=Component.UNDEFINED, muted=Component.UNDEFINED, playbackRate=Component.UNDEFINED, width=Component.UNDEFINED, height=Component.UNDEFINED, style=Component.UNDEFINED, playsinline=Component.UNDEFINED, currentTime=Component.UNDEFINED, secondsLoaded=Component.UNDEFINED, duration=Component.UNDEFINED, intervalCurrentTime=Component.UNDEFINED, intervalSecondsLoaded=Component.UNDEFINED, intervalDuration=Component.UNDEFINED, seekTo=Component.UNDEFINED, seekToMode=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'seekToMode', 'style', 'url', 'volume', 'width']
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
+        self.available_properties = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'seekToMode', 'style', 'url', 'volume', 'width']
         self.available_wildcard_properties =            []
         _explicit_args = kwargs.pop('_explicit_args')
         _locals = locals()
