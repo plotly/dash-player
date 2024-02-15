@@ -96,7 +96,6 @@ export default class DashPlayer extends Component {
      */
     setSeekTo() {
         const { seekTo, setProps, seekToMode } = this.props;
-        console.log(seekToMode);
         if (seekTo !== null && typeof setProps === 'function') {
             this.player.seekTo(seekTo, seekToMode);
             setProps({ seekTo: null });
