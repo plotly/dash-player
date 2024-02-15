@@ -43,6 +43,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "glob-parent": "6.0.2",
+    "prop-types": "^15.8.1",
     "react-docgen": "^5.4.3",
     "style-loader": "^3.3.1",
     "styled-jsx": "^5.1.2",
