@@ -15,7 +15,8 @@ duration=NULL, height=NULL, intervalCurrentTime=NULL,
 intervalDuration=NULL, intervalSecondsLoaded=NULL,
 loop=NULL, muted=NULL, playbackRate=NULL, playing=NULL,
 playsinline=NULL, secondsLoaded=NULL, seekTo=NULL,
-style=NULL, url=NULL, volume=NULL, width=NULL)
+seekToMode=NULL, style=NULL, url=NULL, volume=NULL,
+width=NULL)
 }
 
 \arguments{
@@ -57,6 +58,9 @@ mode when playback begins (for iOS).}
 \item{secondsLoaded}{Numeric. Returns the number of seconds that have been loaded.}
 
 \item{seekTo}{Numeric. Seek to the given number of seconds, or fraction if amount is between 0 and 1}
+
+\item{seekToMode}{Character. Seek to mode (can be "seconds" or "fraction"), overwrites default behaviour
+of seekTo that uses fraction or seconds depending on value.}
 
 \item{style}{Named list. Optional additional CSS styles. If width or height are supplied within style,
 then this will override the component-level width or height}
