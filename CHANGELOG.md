@@ -11,6 +11,12 @@ Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for
 
 ---
 
+## [Unreleased]
+
+## Fixed
+
+- Updated dependencies and outdated react syntax to eliminate development environment issues
+
 ## [1.1.0] - 2023-03-16
 
 ## Changed
