@@ -1,6 +1,23 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+import typing  # noqa: F401
+from typing_extensions import TypedDict, NotRequired, Literal # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
+try:
+    from dash.types import NumberType  # noqa: F401
+except ImportError:
+    # Backwards compatibility for dash<=4.1.0
+    if typing.TYPE_CHECKING:
+        raise
+    NumberType = typing.Union[  # noqa: F401
+        typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex
+    ]
+
+ComponentSingleType = typing.Union[str, int, float, Component, None]
+ComponentType = typing.Union[
+    ComponentSingleType,
+    typing.Sequence[ComponentSingleType],
+]
 
 
 class DashPlayer(Component):
@@ -68,11 +85,6 @@ Keyword arguments:
     Seek to the given number of seconds, or fraction if amount is
     between 0 and 1.
 
-- style (dict; optional):
-    Optional additional CSS styles. If width or height are supplied
-    within style, then this will override the component-level width or
-    height.
-
 - url (string; optional):
     The url of the media to be played.
 
@@ -82,12 +94,36 @@ Keyword arguments:
 
 - width (string; default '640px'):
     A number or string representing the pixel width of the player."""
-    _children_props = []
+    _children_props: typing.List[str] = []
     _base_nodes = ['children']
     _namespace = 'dash_player'
     _type = 'DashPlayer'
-    @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, className=Component.UNDEFINED, url=Component.UNDEFINED, playing=Component.UNDEFINED, loop=Component.UNDEFINED, controls=Component.UNDEFINED, volume=Component.UNDEFINED, muted=Component.UNDEFINED, playbackRate=Component.UNDEFINED, width=Component.UNDEFINED, height=Component.UNDEFINED, style=Component.UNDEFINED, playsinline=Component.UNDEFINED, currentTime=Component.UNDEFINED, secondsLoaded=Component.UNDEFINED, duration=Component.UNDEFINED, intervalCurrentTime=Component.UNDEFINED, intervalSecondsLoaded=Component.UNDEFINED, intervalDuration=Component.UNDEFINED, seekTo=Component.UNDEFINED, **kwargs):
+
+
+    def __init__(
+        self,
+        id: typing.Optional[typing.Union[str, dict]] = None,
+        className: typing.Optional[str] = None,
+        url: typing.Optional[str] = None,
+        playing: typing.Optional[bool] = None,
+        loop: typing.Optional[bool] = None,
+        controls: typing.Optional[bool] = None,
+        volume: typing.Optional[NumberType] = None,
+        muted: typing.Optional[bool] = None,
+        playbackRate: typing.Optional[NumberType] = None,
+        width: typing.Optional[str] = None,
+        height: typing.Optional[str] = None,
+        style: typing.Optional[typing.Any] = None,
+        playsinline: typing.Optional[bool] = None,
+        currentTime: typing.Optional[NumberType] = None,
+        secondsLoaded: typing.Optional[NumberType] = None,
+        duration: typing.Optional[NumberType] = None,
+        intervalCurrentTime: typing.Optional[NumberType] = None,
+        intervalSecondsLoaded: typing.Optional[NumberType] = None,
+        intervalDuration: typing.Optional[NumberType] = None,
+        seekTo: typing.Optional[NumberType] = None,
+        **kwargs
+    ):
         self._prop_names = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['id', 'className', 'controls', 'currentTime', 'duration', 'height', 'intervalCurrentTime', 'intervalDuration', 'intervalSecondsLoaded', 'loop', 'muted', 'playbackRate', 'playing', 'playsinline', 'secondsLoaded', 'seekTo', 'style', 'url', 'volume', 'width']
@@ -98,3 +134,5 @@ Keyword arguments:
         args = {k: _locals[k] for k in _explicit_args}
 
         super(DashPlayer, self).__init__(**args)
+
+setattr(DashPlayer, "__init__", _explicitize_args(DashPlayer.__init__))

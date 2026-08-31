@@ -113,6 +113,12 @@ export default class DashPlayer extends Component {
         this.updateDuration()
     }
 
+    componentWillUnmount() {
+        clearInterval(this.handleCurrentTime);
+        clearInterval(this.handleDuration);
+        clearInterval(this.handleSecondsLoaded);
+    }
+
     render() {
         const {
             id,
