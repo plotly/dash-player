@@ -11,7 +11,7 @@ Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for
 
 ---
 
-## [Unreleased]
+## [1.1.1] - 2026-09-14
 
 ## Fixed
 
