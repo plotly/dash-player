@@ -98,7 +98,7 @@ export default class DashPlayer extends Component {
             setProps
         } = this.props;
 
-        if (seekTo !== null && typeof setProps  === 'function'){
+        if (seekTo !== null && typeof setProps  === 'function' && this.player.current !== null){
             this.player.current.seekTo(seekTo);
             setProps({seekTo: null});
         }
