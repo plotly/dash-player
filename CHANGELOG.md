@@ -13,6 +13,9 @@ Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for
 
 ## [Unreleased]
 
+## Changed
+- [#74](https://github.com/plotly/dash-player/pull/74) Remove support for `dash<3` and `python<3.8`
+
 ## Fixed
 
 - [#74](https://github.com/plotly/dash-player/issues/74) Fixed video player throwing errors on unmount
