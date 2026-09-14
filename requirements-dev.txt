@@ -1,1 +1,4 @@
-dash[ci,dev,testing]==4.4.1
+dash[testing]>=2.18,<3
+flake8
+pyyaml
+setuptools<81

@@ -28,9 +28,7 @@ jobs:
         run: echo "$CHROMEWEBDRIVER" >> "$GITHUB_PATH"
 
       - name: Install Python dependencies
-        run: |
-          pip install -r requirements-dev.txt
-          pip install "percy-selenium>=2"
+        run: pip install -r requirements-dev.txt
 
       - name: Lint with flake8
         run: npm run lint
