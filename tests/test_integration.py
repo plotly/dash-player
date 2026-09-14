@@ -1,3 +1,5 @@
+import time
+
 import dash
 from dash import html, Input, Output, State
 from dash_player import DashPlayer
@@ -140,3 +142,44 @@ def test_003_toggle_properties_via_callback(dash_duo):
     dash_duo.wait_for_text_to_equal("#muted-div", "None")
     muted_btn.click()
     dash_duo.wait_for_text_to_equal("#muted-div", "True")
+
+
+def test_004_no_console_error_after_unmount(dash_duo):
+    app = dash.Dash(__name__)
+    app.layout = html.Div(
+        children=[
+            html.Button("Remove", id="remove-btn"),
+            html.Div(
+                DashPlayer(
+                    id="video-player",
+                    url="https://media.w3.org/2010/05/bunny/movie.ogv",
+                    playing=True,
+                    muted=True,
+                    intervalCurrentTime=50,
+                    intervalDuration=50,
+                    intervalSecondsLoaded=50,
+                ),
+                id="player-container",
+            ),
+        ]
+    )
+
+    @app.callback(
+        Output("player-container", "children"),
+        Input("remove-btn", "n_clicks"),
+        prevent_initial_call=True,
+    )
+    def remove_player(n_clicks):
+        return "player removed"
+
+    dash_duo.start_server(app)
+
+    dash_duo.wait_for_element("#video-player")
+    dash_duo.find_element("#remove-btn").click()
+    dash_duo.wait_for_text_to_equal("#player-container", "player removed")
+    # Let the polling intervals tick after the player unmounts. If they were
+    # not cleared, updateCurrentTime/Duration/SecondsLoaded read the removed
+    # player ref and throw on every tick, flooding the console.
+    time.sleep(1)
+
+    assert dash_duo.get_logs() == [], "browser console should contain no error"

@@ -11,12 +11,14 @@ export default class DashPlayer extends Component {
         this.updateDuration = this.updateDuration.bind(this);
         this.updateIntervals = this.updateIntervals.bind(this);
         this.setSeekTo = this.setSeekTo.bind(this);
+
+        this.player = React.createRef();
     }
 
     updateCurrentTime(){
         const {setProps} = this.props;
-        if (this.refs.player !== null){
-            const currentTime = this.refs.player.getCurrentTime();
+        if (this.player.current !== null){
+            const currentTime = this.player.current.getCurrentTime();
 
             if (typeof setProps  === 'function') {
                 setProps({currentTime: currentTime});
@@ -26,8 +28,8 @@ export default class DashPlayer extends Component {
 
     updateSecondsLoaded(){
         const {setProps} = this.props;
-        if (this.refs.player !== null){
-            const secondsLoaded = this.refs.player.getSecondsLoaded();
+        if (this.player.current !== null){
+            const secondsLoaded = this.player.current.getSecondsLoaded();
 
             if (typeof setProps  === 'function') {
                 setProps({secondsLoaded: secondsLoaded});
@@ -37,8 +39,8 @@ export default class DashPlayer extends Component {
 
     updateDuration(){
         const {setProps} = this.props;
-        if (this.refs.player !== null){
-            const duration = this.refs.player.getDuration();
+        if (this.player.current !== null){
+            const duration = this.player.current.getDuration();
 
             if (typeof setProps  === 'function'){
                 setProps({duration: duration});
@@ -96,8 +98,8 @@ export default class DashPlayer extends Component {
             setProps
         } = this.props;
 
-        if (seekTo !== null && typeof setProps  === 'function'){
-            this.refs.player.seekTo(seekTo);
+        if (seekTo !== null && typeof setProps  === 'function' && this.player.current !== null){
+            this.player.current.seekTo(seekTo);
             setProps({seekTo: null});
         }
     }
@@ -109,6 +111,12 @@ export default class DashPlayer extends Component {
 
     componentDidMount() {
         this.updateDuration()
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.handleCurrentTime);
+        clearInterval(this.handleDuration);
+        clearInterval(this.handleSecondsLoaded);
     }
 
     render() {
@@ -130,7 +138,7 @@ export default class DashPlayer extends Component {
 
         return (
             <ReactPlayer
-                ref="player"
+                ref={this.player}
                 id={id}
                 url={url}
                 playing={playing}
@@ -143,7 +151,7 @@ export default class DashPlayer extends Component {
                 height={height}
                 style={style}
                 playsinline={playsinline}
-                class={className}
+                className={className}
             />
         );
     }

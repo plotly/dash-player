@@ -4,8 +4,8 @@
 
 We recommend the following versions to build this package:
 
-- `node`: 16.17.0
-- `npm`: 8.15.0
+- `node`: 22.x
+- `npm`: 10.x
 
 To generate builds manually, run the following:
 

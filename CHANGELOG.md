@@ -11,6 +11,13 @@ Changes to `dash-player` were sponsored by Volkswagen's Center of Excellence for
 
 ---
 
+## [Unreleased]
+
+## Fixed
+
+- [#74](https://github.com/plotly/dash-player/issues/74) Fixed video player throwing errors on unmount
+- Updated dependencies and outdated react syntax to eliminate development environment issues
+
 ## [1.1.0] - 2023-03-16
 
 ## Changed
